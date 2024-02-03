@@ -1,0 +1,160 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+.header{
+    height:50px;
+    width:100vw;
+    /* border:1px solid green; */
+    display:flex;
+    justify-content: space-between;
+}
+.headerBody{
+  height:100%;  
+  width:50%;
+  /* border:1px dotted black; */
+  display:flex;
+  align-items:center;
+  
+}
+.headerBody:first-child{
+    padding-left: 10px;
+}
+.headerBody:nth-child(2){
+    justify-content: center;
+    align-items:center;
+}
+.headerBody:nth-child(3){
+    justify-content: flex-end;
+    padding-right:10px;
+    gap:10px;
+}
+
+.navbutton{
+    width:70px;
+    background-color: black;
+    color:white;
+    height:90%;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    justify-content:center;
+}
+.navlist{
+    display:flex;
+    height:100%;
+    gap:3px;
+    list-style: none;
+    align-items:center;
+}
+.navinput{
+    width:70%;
+    height:90%;
+    border-radius: 20px;
+    outline:none;
+    padding-left:10px;
+}
+
+.hero{
+    width:100%;
+    height:90vh;
+    /* border:1px solid black; */
+    display:flex;
+}
+.heroBody{
+    width:50%;
+    height:100%; 
+    /* border:1px solid black; */
+    display: flex;
+
+}
+
+.heroBody:first-child{
+    flex-direction: column;
+    padding-left:30px;
+    gap:10px;
+    justify-content: center;
+}
+
+.heroBody:first-child h1{
+    font-size: 100px;
+}
+
+.heroBody:nth-child(2){
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+}
+
+.heroBody:nth-child(2) img{
+    width:500px;
+    height:500px;
+}
+.herobut{
+    display:flex;
+    gap:10px;
+}
+.herobut button:first-child{
+    width:100px;
+    height:50px;
+    background-color: black;
+    color:white
+}
+.herobut button:nth-child(2){
+    width:100px;
+    background: transparent;
+    border:1px solid black;
+    color:black;
+}
+
+@media screen and (max-width:900px){
+    .headerBody:nth-child(2){
+        display:none;
+    }
+
+    .heroBody:first-child h1{
+        font-size:70px;
+    }
+
+    .heroBody:first-child p{
+        font-size:15px;
+    }
+
+    .heroBody:nth-child(2) img{
+        width:400px;
+        height:400px
+    }
+}
+
+@media screen and (max-width:720px){
+    .hero{
+        flex-direction: column;
+        gap:20px;
+    }
+
+    .heroBody{
+        width: 100%;
+        height:50%;
+    }
+}
+.get-started{
+    width:90px;
+    background-color: black;
+    color:white;
+    height:100%;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    justify-content:center;
+}
+.about{
+    width:90px;
+    background-color: white;
+    color:black;
+    height:100%;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    justify-content:center;
+}
