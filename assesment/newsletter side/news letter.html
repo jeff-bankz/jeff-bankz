@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>The Kott.org Newsletter</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/2024/icons/57x57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/2024/icons/180x180.png">
+<link rel="apple-touch-icon" sizes="256x256" href="/images/2024/icons/256x256.png">
+<link href="/images/2024/icons/256x256.png" rel="icon" type="image/png" sizes="256x256" />
+
+<script>
+// Immediately set theme on page load
+(function() {
+    var storedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+})();
+</script>
+
+<script src="/templates/2024/js/jquery-1.11.3.min.js"></script>
+<script src="/templates/2024/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/templates/2024/js/jquery.widowFix-1.3.min.js"></script>
+<script src="/templates/2024/js/jquery.timeago.js"></script>
+<script src="/templates/2024/js/bigfoot.js"></script>
+<script src="/templates/2024/js/threads.js"></script>
+<script src="/templates/2024/js/site.js"></script>
+
+
+<script type="text/javascript">
+  (function(c) {
+    var script = document.createElement("script");
+    script.src = "https://js.memberful.com/embed.js";
+    script.onload = function() { Memberful.setup(c) };
+    document.head.appendChild(script);
+  })({
+    site: ["https://kottke.memberful.com"]
+  });
+</script>
+
+<script type="text/javascript">
+	$.bigfoot(
+        {
+			numberResetSelector: ".post",
+			buttonMarkup: "<div class='bigfoot-footnote__container' aria-hidden=\"true\"> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" aria-hidden=\"true\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> <i class=\"fa-solid fa-circle-plus\"></i> </button></div>"
+        }
+    );
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".post p a").attr("target","_blank");
+  $(".post p a").each(function() {
+    var href = $(this).attr("href");
+    if (!href.startsWith('http://') && !href.startsWith('https://') || href.includes('//kottke.org')) {
+      $(this).removeAttr("target");
+    }
+  });
+	$(".post p sup a").removeAttr("target");
+	$(".post .footnote a:last-of-type").removeAttr("target");
+
+  $("time.timeago").timeago().css("visibility", "visible");
+	
+	$('h2').widowFix();
+	
+	$(".post p strong:contains('Update:')").each(function() {
+	    $( this ).addClass("post-update-title").html("Update" + ((typeof $( this ).attr('title') !== typeof undefined && $( this ).attr('title') !== false) ? "<span class='post-update-timestamp'> ·  " + $( this ).attr("title") + "</span>" : ""));
+	  });
+    });
+</script>
+
+<link rel="stylesheet" href="https://use.typekit.net/eyl4ubc.css">
+<link rel="stylesheet" href="https://kit.fontawesome.com/205dae25a8.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/templates/2024/css/main.css?v=1" type="text/css" />
+<link rel="stylesheet" href="/templates/2024/css/bigfoot-default.css" type="text/css" />
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.kottke.org/main" />
+
+</head>
+<body>
+
+<div class="big-hug"><div class="grid-container">
+
+<div class="grid-item" id="logo-container">
+
+<div class="logo-grid">
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-19.jpg" alt="go to homepage"></a>
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-desktop">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-desktop" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate315 hue180">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-10.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate135 hue270">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-1.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-13.jpg" alt="go to homepage"></a>
+
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-mobile">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-mobile" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+</div>
+
+
+<div class="logo-grid-item logo-grid-open-circle"></div>
+</div>
+</div>
+
+<div class="grid-item" id="sp1" aria-hidden="true"></div>
+
+<div class="grid-item" id="menu-container">
+<input type="checkbox" id="menu-btn" /><label id="menu-label" for="menu-btn"><div id="burger">MENU<i class="fa-regular fa-bars-staggered"></i></div></label>
+
+<nav>
+<label id="menu-label2" for="menu-btn"><div id="close-btn"><i class="fa-regular fa-xmark"></i></div></label>
+
+    <!-- <a href="https://kottke.memberful.com/auth/sign_in" style="text-decoration: none;"><div id="login">Member Login<i class="fa-light fa-right-to-bracket"></i></div></a> -->
+
+
+<ul>
+<li><a href="/ass.html">Home</a></li>
+<li><a href="/members side/members.html">Membership <i class="fa-light fa-sparkles" aria-hidden="true"></i></a></li>
+<li><a href="/newsletter"></a></li>
+<li><a href="/goods side/goods.html">Goods</a></li>
+<li><a href="/everfreash side/everfreash.html">Archive + Tags</a></li>
+<li><a href="/about side/about.html">About/Contact</a></li>
+</ul>
+
+<button id="theme-toggle" type="button">
+<span class="d-block-light d-none"><i class="fa-light fa-space-station-moon-construction"></i></span>
+<span class="d-block-dark d-none"><i class="fa-light fa-sun-bright"></i></span>
+</button>
+
+</nav></div>
+
+<div class="grid-item" id="boring-container">
+
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7DTK7I&placement=kottkeorg" ; id="_carbonads_js"></script>
+<div class="boring-title"><a href="http://carbonads.net/?utm_source=kottkeorg&utm_medium=ad_via_link&utm_campaign=in_unit&utm_term=carbon" target="_blank"></a></div>
+</div>
+
+<div class="grid-item" id="extras-container">
+<div id="socials">
+
+<h3>Stay Connected</h3>
+
+<ul class="fa-ul">
+<li><a href="/newsletter"><span class="fa-li"><i class="fa-solid fa-newspaper" aria-hidden="true" style="color:#E474A2;"></i></span></a></li>
+<li><a href="http://feeds.kottke.org/main"><span class="fa-li"><i class="fa-solid fa-square-rss" aria-hidden="true" style="color:#ff6600;"></i></span></a></li>
+<li><a href="https://www.threads.net/@jkottke"><span class="fa-li"><i class="fa-brands fa-threads" aria-hidden="true"></i></span></a></li>
+<li><a href="https://mastodon.social/@kottke" rel="me"><span class="fa-li"><i class="fa-brands fa-mastodon" aria-hidden="true" style="color:#4267B2;"></i></span></a></li>
+<li><a href="https://bsky.app/profile/kottke.org"><span class="fa-li"><i class="fa-kit fa-bluesky" aria-hidden="true" style="color:rgb(0, 133, 255);"></i></span></a></li>
+<li><a href="https://bonus.kottke.org/"><span class="fa-li"><i class="fa-brands fa-square-tumblr" aria-hidden="true" style="color:#FD492F;"></i></span></a></li>
+<li><a href="https://www.facebook.com/kottke.org"><span class="fa-li"><i class="fa-brands fa-facebook" aria-hidden="true" style="color:#4267B2;"></i></span></a></li>
+</ul>
+
+</div>
+
+
+
+<p class="smaller">This site is made possible by member support</a>. ❤️</p>
+
+<p class="smaller">Big thanks to our supporters for hosting the site and offering amazing tech support.</p>
+
+<p class="smaller">When you buy through links on kott.org, I may earn an affiliate commission. Thanks for supporting the site!</p>
+
+<p class="smaller"><strong>kott.org</strong> home of fine hypertext products since 1998.</p>
+
+<p class="smallerer no-underline"><a href="/tag/burgers" title="burgers">🍔</a>&nbsp; <a href="/tag/death" title="death">💀</a>&nbsp; <a href="/tag/photography" title="photography">📸</a>&nbsp; <a href="/tag/crying%20at%20work" title="crying at work">😭</a>&nbsp; <a href="/tag/black%20holes" title="black holes">🕳️</a>&nbsp; <a href="/tag/Old%20Custer" title="Old Custer">🤠</a>&nbsp; <a href="/tag/film%20school" title="film school">🎬</a>&nbsp; <a href="/tag/potatoes" title="potatoes">🥔</a></p></div>
+
+<div class="grid-item" id="content-container">
+
+<div class="main">
+
+<h2>The Kott.org Newsletter</h2>
+
+<p>The Kott.org Newsletter is a twice-weekly digest of posts and links from kottke.org, published every Tuesday and Friday. It's free to sign up, we're not gonna spam you, and you can leave whenever you want. Please, join us.</p>
+
+<div id="mc_embed_signup">
+<form action="/system/sendy/subscribe" method="POST" accept-charset="utf-8" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" novalidate>
+<div class="mc-field-group"><input type="email" name="email" value="" id="mce-EMAIL" placeholder="your email address" required autofocus /><div style="display:none;"><label for="hp">HP</label><input type="text" name="hp" id="hp" tabindex="-1" /></div>
+	<input type="hidden" name="list" value="2WvoF89209Xhm2wPtqHqXL5A" />
+	<input type="hidden" name="subform" value="yes" />
+	<input type="submit" name="submit" value="Subscribe" id="mc-embedded-subscribe" class="button" /></div>
+</form>
+
+<div class="response" id="mce-error-response">* Oops! Please make sure your email address is valid.</div>
+</div>
+
+<p>The Tues digest will include posts from Sat-Tue and the Fri digest will include posts from Wed-Fri. That way, unless I've made a horrible miscalculation (possible!), readers of this newsletter will be able to see links to everything published to the site each week.</p>
+
+<script type='text/javascript'>
+/* jQuery Validate Emails with Regex */
+function validateEmail(Email) {
+    var pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    return $.trim(Email).match(pattern) ? true : false;
+}
+
+$(document).ready(function() {
+   $('#mc-embedded-subscribe').click(function(e) {
+        var sEmail = $('#mce-EMAIL').val();
+        if (! validateEmail(sEmail)) {
+			$('#mce-error-response').show();
+            e.preventDefault();
+        }
+    });
+});
+
+</script>
+
+</div>
+
+
+</div>
+<div class="grid-item" id="sp2" aria-hidden="true"></div>
+
+
+
+</div></div>
+
+<div id="menu-underlay"></div>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"8821bf059971c34b","r":1,"version":"2024.4.1","token":"081bbcc861d84c33922245c7994efb01"}' crossorigin="anonymous"></script>
+</body>
+</html>

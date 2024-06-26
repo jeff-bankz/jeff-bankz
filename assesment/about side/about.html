@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>About Kott.org</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/2024/icons/57x57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/2024/icons/180x180.png">
+<link rel="apple-touch-icon" sizes="256x256" href="/images/2024/icons/256x256.png">
+<link href="/images/2024/icons/256x256.png" rel="icon" type="image/png" sizes="256x256" />
+
+<script>
+// Immediately set theme on page load
+(function() {
+    var storedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+})();
+</script>
+
+<script src="/templates/2024/js/jquery-1.11.3.min.js"></script>
+<script src="/templates/2024/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/templates/2024/js/jquery.widowFix-1.3.min.js"></script>
+<script src="/templates/2024/js/jquery.timeago.js"></script>
+<script src="/templates/2024/js/bigfoot.js"></script>
+<script src="/templates/2024/js/threads.js"></script>
+<script src="/templates/2024/js/site.js"></script>
+
+
+<script type="text/javascript">
+  (function(c) {
+    var script = document.createElement("script");
+    script.src = "https://js.memberful.com/embed.js";
+    script.onload = function() { Memberful.setup(c) };
+    document.head.appendChild(script);
+  })({
+    site: ["https://kottke.memberful.com"]
+  });
+</script>
+
+<script type="text/javascript">
+	$.bigfoot(
+        {
+			numberResetSelector: ".post",
+			buttonMarkup: "<div class='bigfoot-footnote__container' aria-hidden=\"true\"> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" aria-hidden=\"true\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> <i class=\"fa-solid fa-circle-plus\"></i> </button></div>"
+        }
+    );
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".post p a").attr("target","_blank");
+  $(".post p a").each(function() {
+    var href = $(this).attr("href");
+    if (!href.startsWith('http://') && !href.startsWith('https://') || href.includes('//kottke.org')) {
+      $(this).removeAttr("target");
+    }
+  });
+	$(".post p sup a").removeAttr("target");
+	$(".post .footnote a:last-of-type").removeAttr("target");
+
+  $("time.timeago").timeago().css("visibility", "visible");
+	
+	$('h2').widowFix();
+	
+	$(".post p strong:contains('Update:')").each(function() {
+	    $( this ).addClass("post-update-title").html("Update" + ((typeof $( this ).attr('title') !== typeof undefined && $( this ).attr('title') !== false) ? "<span class='post-update-timestamp'> ·  " + $( this ).attr("title") + "</span>" : ""));
+	  });
+    });
+</script>
+
+<link rel="stylesheet" href="https://use.typekit.net/eyl4ubc.css">
+<link rel="stylesheet" href="https://kit.fontawesome.com/205dae25a8.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/templates/2024/css/main.css?v=1" type="text/css" />
+<link rel="stylesheet" href="/templates/2024/css/bigfoot-default.css" type="text/css" />
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.kottke.org/main" />
+
+</head>
+<body>
+
+<div class="big-hug"><div class="grid-container">
+
+<div class="grid-item" id="logo-container">
+
+<div class="logo-grid">
+
+
+<div aria-hidden="true" class="logo-grid-item rotate90 hue180">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-13.jpg" alt="go to homepage"></a>
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-desktop">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-desktop" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate225 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-6.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate90 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-24.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 hue90">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-29.jpg" alt="go to homepage"></a>
+
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-mobile">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-mobile" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+</div>
+
+
+<div class="logo-grid-item logo-grid-open-circle"></div>
+</div>
+</div>
+
+<div class="grid-item" id="sp1" aria-hidden="true"></div>
+
+<div class="grid-item" id="menu-container">
+<input type="checkbox" id="menu-btn" /><label id="menu-label" for="menu-btn"><div id="burger">MENU<i class="fa-regular fa-bars-staggered"></i></div></label>
+
+<nav>
+<label id="menu-label2" for="menu-btn"><div id="close-btn"><i class="fa-regular fa-xmark"></i></div></label>
+
+    <a href="https://kottke.memberful.com/auth/sign_in" style="text-decoration: none;"><div id="login">Member Login<i class="fa-light fa-right-to-bracket"></i></div></a>
+
+
+<ul>
+<li><a href="/ass.html">Home</a></li>
+<li><a href="/members side/members.html">Membership <i class="fa-light fa-sparkles" aria-hidden="true"></i></a></li>
+<li><a href="/newsletter side/news letter.html">Newsletter</a></li>
+<li><a href="/goods side/goods.html">Goods</a></li>
+<li><a href="/everfreash side/everfreash.html">Archive + Tags</a></li>
+<!-- <li><a href="/about">About/Contact</a></li> -->
+</ul>
+
+<button id="theme-toggle" type="button">
+<span class="d-block-light d-none"><i class="fa-light fa-space-station-moon-construction"></i></span>
+<span class="d-block-dark d-none"><i class="fa-light fa-sun-bright"></i></span>
+</button>
+
+</nav></div>
+
+<div class="grid-item" id="boring-container">
+
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7DTK7I&placement=kottkeorg" ; id="_carbonads_js"></script>
+<div class="boring-title"><a href="http://carbonads.net/?utm_source=kottkeorg&utm_medium=ad_via_link&utm_campaign=in_unit&utm_term=carbon" target="_blank"></a></div>
+</div>
+
+<div class="grid-item" id="extras-container">
+<div id="socials">
+
+<h3>Stay Connected</h3>
+
+<ul class="fa-ul">
+<!-- <li><a href="/newsletter"><span class="fa-li"><i class="fa-solid fa-newspaper" aria-hidden="true" style="color:#E474A2;"></i></span>Newsletter</a></li>
+<li><a href="http://feeds.kottke.org/main"><span class="fa-li"><i class="fa-solid fa-square-rss" aria-hidden="true" style="color:#ff6600;"></i></span>RSS Feed</a></li>
+<li><a href="https://www.threads.net/@jkottke"><span class="fa-li"><i class="fa-brands fa-threads" aria-hidden="true"></i></span>Threads</a></li>
+<li><a href="https://mastodon.social/@kottke" rel="me"><span class="fa-li"><i class="fa-brands fa-mastodon" aria-hidden="true" style="color:#4267B2;"></i></span>Mastodon</a></li>
+<li><a href="https://bsky.app/profile/kottke.org"><span class="fa-li"><i class="fa-kit fa-bluesky" aria-hidden="true" style="color:rgb(0, 133, 255);"></i></span>Bluesky</a></li>
+<li><a href="https://bonus.kottke.org/"><span class="fa-li"><i class="fa-brands fa-square-tumblr" aria-hidden="true" style="color:#FD492F;"></i></span>Tumblr</a></li>
+<li><a href="https://www.facebook.com/kottke.org"><span class="fa-li"><i class="fa-brands fa-facebook" aria-hidden="true" style="color:#4267B2;"></i></span>Facebook</a></li> -->
+</ul>
+ 
+</div>
+
+
+
+<p class="smaller">This site is made possible by member support</a>. ❤️</p>
+
+<p class="smaller">Big thanks to our supporters for hosting the site and offering amazing tech support.</p>
+
+<p class="smaller">When you buy through links on kott.org, I may earn an affiliate commission. Thanks for supporting the site!</p>
+
+<p class="smaller"><strong>kott.org</strong> home of fine hypertext products since 1998.</p>
+
+<p class="smallerer no-underline"><a href="/tag/burgers" title="burgers">🍔</a>&nbsp; <a href="/tag/death" title="death">💀</a>&nbsp; <a href="/tag/photography" title="photography">📸</a>&nbsp; <a href="/tag/crying%20at%20work" title="crying at work">😭</a>&nbsp; <a href="/tag/black%20holes" title="black holes">🕳️</a>&nbsp; <a href="/tag/Old%20Custer" title="Old Custer">🤠</a>&nbsp; <a href="/tag/film%20school" title="film school">🎬</a>&nbsp; <a href="/tag/potatoes" title="potatoes">🥔</a></p></div>
+
+<div class="grid-item" id="content-container">
+
+<div class="main">
+
+<h2>About Kott.org</h2>
+
+<p>Founded in 1998, kott.org is one of the oldest blogs on the web. It&rsquo;s written and produced by <em>William Kott</em> and covers the essential people, inventions, performances, and ideas that increase the collective adjacent possible of humanity. Frequent topics of interest among the 26,000+ posts include art, technology, science, visual culture, design, music, cities, food, architecture, sports, endless nonsense, and carefully curated current events, all of it lightly contextualized. Basically, it&rsquo;s the world&rsquo;s complete knowledge, relentlessly filtered through my particular worldview, with all the advantages and disadvantages that entails.</p>
+
+<p>kott.org has helped influence the design and format of social media on the web since its inception. In 2000, the site introduced the permalink as a deliberate design feature, now the atomic element of social media. kott.org has been cited in hundreds of books and academic publications and was one of the first blogs covered in major media like the New Yorker. In 2005, work on the site was 100% funded using a patronage model</a> that anticipated services like Kickstarter and Patreon. The launch versions of both Gawker and BuzzFeed were partially based, in design and function, on kottke.org. The site has helped discover and popularize many emerging ideas and media forms, including tumblelogs in 2005, about a year and a half before Tumblr launched.</p>
+
+<p>The Guardian named kott.org one of the 50 most powerful blogs in the world in 2008. In 2013, Wired Magazine asked me to write about kott.org for their 20th anniversary issue honoring the people, companies, and ideas that &ldquo;have shaped the future we live in today&rdquo;. Slate wrote a robotic blogger to see if the site&rsquo;s output could be matched algorithmically. Time named me one of the 25 best bloggers in 2013. You can read more about the site <em>on</em> kott.org. Meta!</p>
+
+
+<h3>About William</h3>
+
+<p>I love the Web. I discovered it in college in 1994 and have been designing, programming, and writing online like my life depends on it ever since. In the 90s and 00s, I designed and developed sites for 3M, E*Trade, Target, and Charles Schwab. I designed Gawker for its launch, including the logo, which I&rsquo;m proud to say a) lasted the entire tenure of the site and b) was photoshopped being bodyslammed</a> by boyhood hero Hulk Hogan. I designed a font called Silkscreen</a>, which has been used by Adobe, Volvo, Britney Spears, Herman Miller, and in The Bourne Legacy.</p>
+	
+<p>My work on kott.org has been featured in The New Yorker, The New York Times, Wired, and dozens of other media outlets. I was an early advisor to BuzzFeed and helped them hire two key early employees. I&rsquo;ve headlined at SXSW Interactive and spoken at MoMA, Ars Electronica, and Webstock. In 2005, I was a Senior Fellow in the R&amp;D Lab at Eyebeam. In 2011, I designed and built Stellar</a> (closed down in July 2016) to make it easy for people to discover great things online.</p>
+	
+<p>You can find me on Mastodon, Instagram, Threads, Facebook, and Wikipedia. I&rsquo;ve lived in WI, IA, MO, MN, CA, NY, NH, VT, and, briefly, France. I currently live in Vermont with my two kids. I don&rsquo;t have a plan. But I still love the Web.</p>
+
+
+<h3>Contact William</h3>
+
+<p>You can email me at [email&#160;protected] or try to catch me on Mastodon. I get a lot of messages (too many to reply to & still have time to blog), but I read everything I receive and will try my best to respond if a response is necessary. Sending links is appreciated! If you have a project or video you're proud of, send it along. If you send me something on Facebook I probably won&rsquo;t even see it because I don&rsquo;t spend a lot of time there.</p>
+
+<p>If you&rsquo;d like to send me something, <a href=''>email me</a> and I might send you my address.</p>
+
+
+<h3>Colophon</h3>
+
+<p>kottke.org is hosted by Arcustech and published using Movable Type. Memberful powers kott.org memberships. I send out <a href="/newsletter">the newsletter</a> with Sendy. If you would like to advertise on kott.org, contact the folks at Carbon Ads.
+
+<p>Thanks to all of the guest editors over the years who have lent their energy and perspective to the site, including Edith Zimmerman, Chrysanthe Tenentes, Patrick Tanguay, Tim Carmody, Sarah Pavis, Ainsley Drew, Aaron Cohen, Susannah Breslin, Choire Sicha, and Adam Lisagor. And to Chris Piascik for the awesome illustrations.</p>
+
+<!-- <p>Other indispensables: <a href="https://github.com/">GitHub</a>,Dropbox</a>, <a href="https://gmail.com">Gmail</a>, <a href="https://www.google.com/chrome/browser/desktop/">Chrome</a>, <a href="http://aws.amazon.com/">AWS</a>, <a href="https://www.sketchapp.com/">Sketch</a>, <a href="https://www.apple.com/macbook-air-m1/">Apple MacBook Air M1</a>, <a href="https://www.instapaper.com/">Instapaper</a>, <a href="https://panic.com/transmit/">Transmit</a>, <a href="https://macromates.com/">TextMate</a>, <a href="https://www.emeco.net/products/chairs/111-navy-chair-charcoal-one-size">Emeco Navy Chair</a>, <a href="https://play.spotify.com/user/12130829032">Spotify</a>, <a href="http://www.muji.us/store/ultrasonic-aroma-diffuser.html">Muji Ultrasonic Aroma Diffuser</a>, and <a href="https://www.apple.com/airpods-pro/">Apple AirPods Pro</a>.</p> -->
+
+</div>
+
+
+</div>
+<div class="grid-item" id="sp2" aria-hidden="true"></div>
+
+
+
+</div></div>
+
+<div id="menu-underlay"></div>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"88221ca7d805433a","r":1,"version":"2024.4.1","token":"081bbcc861d84c33922245c7994efb01"}' crossorigin="anonymous"></script>
+</body>
+</html>

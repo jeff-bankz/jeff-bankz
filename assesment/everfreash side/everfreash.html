@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<title>The Kott.org Archives</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/2024/icons/57x57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/2024/icons/180x180.png">
+<link rel="apple-touch-icon" sizes="256x256" href="/images/2024/icons/256x256.png">
+<link href="/images/2024/icons/256x256.png" rel="icon" type="image/png" sizes="256x256" />
+
+<script>
+// Immediately set theme on page load
+(function() {
+    var storedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+})();
+</script>
+
+<script src="/templates/2024/js/jquery-1.11.3.min.js"></script>
+<script src="/templates/2024/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/templates/2024/js/jquery.widowFix-1.3.min.js"></script>
+<script src="/templates/2024/js/jquery.timeago.js"></script>
+<script src="/templates/2024/js/bigfoot.js"></script>
+<script src="/templates/2024/js/threads.js"></script>
+<script src="/templates/2024/js/site.js"></script>
+
+
+<script type="text/javascript">
+  (function(c) {
+    var script = document.createElement("script");
+    script.src = "https://js.memberful.com/embed.js";
+    script.onload = function() { Memberful.setup(c) };
+    document.head.appendChild(script);
+  })({
+    site: ["https://kottke.memberful.com"]
+  });
+</script>
+
+<script type="text/javascript">
+	$.bigfoot(
+        {
+			numberResetSelector: ".post",
+			buttonMarkup: "<div class='bigfoot-footnote__container' aria-hidden=\"true\"> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" aria-hidden=\"true\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> <i class=\"fa-solid fa-circle-plus\"></i> </button></div>"
+        }
+    );
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".post p a").attr("target","_blank");
+  $(".post p a").each(function() {
+    var href = $(this).attr("href");
+    if (!href.startsWith('http://') && !href.startsWith('https://') || href.includes('//kottke.org')) {
+      $(this).removeAttr("target");
+    }
+  });
+	$(".post p sup a").removeAttr("target");
+	$(".post .footnote a:last-of-type").removeAttr("target");
+
+  $("time.timeago").timeago().css("visibility", "visible");
+	
+	$('h2').widowFix();
+	
+	$(".post p strong:contains('Update:')").each(function() {
+	    $( this ).addClass("post-update-title").html("Update" + ((typeof $( this ).attr('title') !== typeof undefined && $( this ).attr('title') !== false) ? "<span class='post-update-timestamp'> ·  " + $( this ).attr("title") + "</span>" : ""));
+	  });
+    });
+</script>
+
+<link rel="stylesheet" href="https://use.typekit.net/eyl4ubc.css">
+<link rel="stylesheet" href="https://kit.fontawesome.com/205dae25a8.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/templates/2024/css/main.css?v=1" type="text/css" />
+<link rel="stylesheet" href="/templates/2024/css/bigfoot-default.css" type="text/css" />
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.kottke.org/main" />
+
+</head>
+<body>
+
+<div class="big-hug"><div class="grid-container">
+
+<div class="grid-item" id="logo-container">
+
+<div class="logo-grid">
+
+
+<div aria-hidden="true" class="logo-grid-item rotate90 hue180">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-22.jpg" alt="go to homepage"></a>
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-desktop">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-desktop" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 hue270">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-11.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate90 hue270">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-28.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate270 hue90">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-1.jpg" alt="go to homepage"></a>
+
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-mobile">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-mobile" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+</div>
+
+
+<div class="logo-grid-item logo-grid-open-circle"></div>
+</div>
+</div>
+
+<div class="grid-item" id="sp1" aria-hidden="true"></div>
+
+<div class="grid-item" id="menu-container">
+<input type="checkbox" id="menu-btn" /><label id="menu-label" for="menu-btn"><div id="burger">MENU<i class="fa-regular fa-bars-staggered"></i></div></label>
+
+<nav>
+<label id="menu-label2" for="menu-btn"><div id="close-btn"><i class="fa-regular fa-xmark"></i></div></label>
+
+    <!-- <a href="https://kottke.memberful.com/auth/sign_in" style="text-decoration: none;"><div id="login">Member Login<i class="fa-light fa-right-to-bracket"></i></div></a> -->
+
+
+<ul>
+<li><a href="/ass.html">Home</a></li>
+<li><a href="/members side/members.html">Membership <i class="fa-light fa-sparkles" aria-hidden="true"></i></a></li>
+<li><a href="/newsletter side/news letter.html">Newsletter</a></li>
+<li><a href="/goods side/goods.html">Goods</a></li>
+<!-- <li><a href="/everfreash side/everfreash.html">Archive + Tags</a></li> -->
+<li><a href="/about side/about.html">About/Contact</a></li>
+</ul>
+
+<button id="theme-toggle" type="button">
+<span class="d-block-light d-none"><i class="fa-light fa-space-station-moon-construction"></i></span>
+<span class="d-block-dark d-none"><i class="fa-light fa-sun-bright"></i></span>
+</button>
+
+</nav></div>
+
+<div class="grid-item" id="boring-container">
+
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7DTK7I&placement=kottkeorg" ; id="_carbonads_js"></script>
+<div class="boring-title"> <a href="http://carbonads.net/?utm_source=kottkeorg&utm_medium=ad_via_link&utm_campaign=in_unit&utm_term=carbon" target="_blank"></a></div>
+</div>
+
+<div class="grid-item" id="extras-container">
+<div id="socials">
+
+<h3>Stay Connected</h3>
+
+<ul class="fa-ul">
+<li><a href="/newsletter"><span class="fa-li"><i class="fa-solid fa-newspaper" aria-hidden="true" style="color:#E474A2;"></i></span></a></li>
+<li><a href="http://feeds.kottke.org/main"><span class="fa-li"><i class="fa-solid fa-square-rss" aria-hidden="true" style="color:#ff6600;"></i></span></a></li>
+<li><a href="https://www.threads.net/@jkottke"><span class="fa-li"><i class="fa-brands fa-threads" aria-hidden="true"></i></span></a></li>
+<li><a href="https://mastodon.social/@kottke" rel="me"><span class="fa-li"><i class="fa-brands fa-mastodon" aria-hidden="true" style="color:#4267B2;"></i></span></a></li>
+<li><a href="https://bsky.app/profile/kottke.org"><span class="fa-li"><i class="fa-kit fa-bluesky" aria-hidden="true" style="color:rgb(0, 133, 255);"></i></span></a></li>
+<li><a href="https://bonus.kottke.org/"><span class="fa-li"><i class="fa-brands fa-square-tumblr" aria-hidden="true" style="color:#FD492F;"></i></span></a></li>
+<li><a href="https://www.facebook.com/kottke.org"><span class="fa-li"><i class="fa-brands fa-facebook" aria-hidden="true" style="color:#4267B2;"></i></span></a></li>
+</ul>
+
+</div>
+
+
+
+<p class="smaller">This site is made possible by member support</a>. ❤️</p>
+
+<p class="smaller">Big thanks to our supporters for hosting the site and offering amazing tech support.</p>
+
+<p class="smaller">When you buy through links on kott.org, I may earn an affiliate commission. Thanks for supporting the site!</p>
+
+<p class="smaller"><strong>kott.org</strong> home of fine hypertext products since 1998.</p>
+
+<p class="smallerer no-underline"><a href="/tag/burgers" title="burgers">🍔</a>&nbsp; <a href="/tag/death" title="death">💀</a>&nbsp; <a href="/tag/photography" title="photography">📸</a>&nbsp; <a href="/tag/crying%20at%20work" title="crying at work">😭</a>&nbsp; <a href="/tag/black%20holes" title="black holes">🕳️</a>&nbsp; <a href="/tag/Old%20Custer" title="Old Custer">🤠</a>&nbsp; <a href="/tag/film%20school" title="film school">🎬</a>&nbsp; <a href="/tag/potatoes" title="potatoes">🥔</a></p></div>
+
+<div class="grid-item" id="content-container">
+
+<h2>The Kott.org Archives</h2>
+
+<div id="main">
+
+<p>kott.org has been published regularly since 1998 and includes more than 38,000 entries. If you’re looking for something in particular, try searching:
+
+<div id="search-form"><form method="get" action="https://www.google.com/search" target="_blank">
+<div class="search-field-group">
+<input type="text" name="q" id="search-query" maxlength="255">
+<input type="hidden" name="domains" value="https://kottke.org">
+<input type="hidden" name="sitesearch" value="https://kottke.org">
+<button type="submit"><i class="fa-light fa-magnifying-glass" aria-hidden="true"></i> Search</button></div>
+</form></div>
+
+<p>If you want to surf aimlessly around, pick a tag or particular month below and go nuts.</p>
+
+
+<h3>Tag pages</h3>
+
+<p>A growing number of posts on kott.org have been "tagged" with keywords. Some of the tag pages have dozens or even hundreds of entries, almost like they're slow-moving topical blogs. Warning: you will get <em>lost</em> down some rabbit holes with these.</p>
+
+<p><strong>Some recommended starting points</strong><br />
+<ul class="archive-tags"><li>optical illusions</a></li><li>photography</a></li><li>cities</a></li><li>interviews</a></li><li>death</a></li><li>robots</a></li><li>Wes Anderson</a></li><li>
+  medicine</a></li><li>infoviz</a></li><li>food</a></li><li>art</a></li><li>time travel</a></li><li>film school</a></li><li>best of</a></li><li>maps</a></li><li>Stanley Kubrick</a></li><li>music</a></li><li>remix</a></li><li>crying at work</a></li><li>global warming</a></li><li>David Foster Wallace</a></li><li>How to</a></li><li>telephony</a></li><li>Errol Morris</a></li><li>time lapse</a></li></ul></p>
+
+
+
+<p><strong>Recently popular topics</strong><br />
+<ul class="archive-tags"><li>diary comics</a></li><li>timeless posts</a></li><li>Patrik Svedberg</a></li><li>video</a></li><li>art</a></li><li>things that sound like other things</a></li><li>trees</a></li><li>music</a></li><li>movies</a></li><li>audio</a></li><li>interviews</a></li><li>design</a></li><li>photography</a></li><li>advertising</a></li><li>science</a></li><li>books</a></li></ul></p>
+
+<p><strong>All-time popular subjects</strong><br />
+<ul class="archive-tags"><li>video</a></li><li>movies</a></li><li>books</a></li><li>photography</a></li><li>science</a></li><li>food</a></li><li>music</a></li><li>art</a></li><li>design</a></li><li>NYC</a></li><li>lists</a></li><li>TV</a></li><li>sports</a></li><li>remix</a></li><li>best of</a></li><li>politics</a></li><li>maps</a></li><li>business</a></li><li>language</a></li><li>video games</a></li><li>space</a></li><li>trailers</a></li><li>weblogs</a></li><li>interviews</a></li><li>USA</a></li></ul></p>
+<h3>Monthly archives</h3>
+
+
+<p><strong>2024</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>
+May</a></li>
+</ul></p>
+
+
+<p><strong>2023</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2022</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2021</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2020</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2019</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2018</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2017</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2016</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2015</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+  
+<p><strong>2014</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2013</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2012</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2011</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+<p><strong>2010</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2009</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2008</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2007</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+<p><strong>2006</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2005</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+
+<p><strong>2004</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+  <li>Feb</a></li>
+  
+  <li>Mar</a></li>
+  
+  <li>Apr</a></li>
+  
+  <li>May</a></li>
+  
+  <li>Jun</a></li>
+  
+  <li>Jul</a></li>
+  
+  <li>Aug</a></li>
+  
+  <li>Sep</a></li>
+  
+  <li>Oct</a></li>
+  
+  <li>Nov</a></li>
+  
+  <li>Dec</a></li>
+  </ul></p>
+
+<p><strong>2003</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</a></li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+<p><strong>2002</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</a></li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+<p><strong>2001</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</a></li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+<p><strong>2000</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</a></li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+<p><strong>1999</strong><br /><ul class="archive-months"><li>Jan</a></li>
+
+<li>Feb</a></li>
+
+<li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+<p><strong>1998</strong><br /><ul class="archive-months"><li>Mar</a></li>
+
+<li>Apr</a></li>
+
+<li>May</a></li>
+
+<li>Jun</a></li>
+
+<li>Jul</a></li>
+
+<li>Aug</a></li>
+
+<li>Sep</a></li>
+
+<li>Oct</a></li>
+
+<li>Nov</a></li>
+
+<li>Dec</a></li>
+</ul></p>
+
+
+
+</div>
+
+
+</div>
+<div class="grid-item" id="sp2" aria-hidden="true"></div>
+
+
+
+</div></div>
+
+<div id="menu-underlay"></div>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"882217b9ac25433a","r":1,"version":"2024.4.1","token":"081bbcc861d84c33922245c7994efb01"}' crossorigin="anonymous"></script>
+</body>
+</html>

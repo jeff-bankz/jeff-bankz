@@ -1,0 +1,2462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="kottke.org" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kottke.org" />
+<meta property="og:image" content="https://kottke.org/images/2016/ios/180x180.png" />
+<meta property="og:site_name" content="kottke.org" />
+<meta property="og:description" content="home of fine hypertext products" />
+<meta property="fb:admins" content="549560637" />
+<meta property="fb:app_id" content="279322152122365" /><title>kott.org - home of fine hypertext products</title>
+
+<link rel="apple-touch-icon" sizes="57x57" href="/images/2024/icons/57x57.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/2024/icons/180x180.png">
+<link rel="apple-touch-icon" sizes="256x256" href="/images/2024/icons/256x256.png">
+<link href="/images/2024/icons/256x256.png" rel="icon" type="image/png" sizes="256x256" />
+<script>
+// Immediately set theme on page load
+(function() {
+    var storedTheme = localStorage.getItem('theme') || 
+        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    if (storedTheme) {
+        document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+})();
+</script>
+
+<script src="/templates/2024/js/jquery-1.11.3.min.js"></script>
+<script src="/templates/2024/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/templates/2024/js/jquery.widowFix-1.3.min.js"></script>
+<script src="/templates/2024/js/jquery.timeago.js"></script>
+<script src="/templates/2024/js/bigfoot.js"></script>
+<script src="/templates/2024/js/threads.js"></script>
+<script src="/templates/2024/js/site.js"></script>
+
+<script type="text/javascript">checkForUpdates('/frontpage/updates/index.php', '44597', 120);</script>
+<script type="text/javascript">
+  (function(c) {
+    var script = document.createElement("script");
+    script.src = "https://js.memberful.com/embed.js";
+    script.onload = function() { Memberful.setup(c) };
+    document.head.appendChild(script);
+  })({
+    site: ["https://kottke.memberful.com"]
+  });
+</script>
+
+<script type="text/javascript">
+	$.bigfoot(
+        {
+			numberResetSelector: ".post",
+			buttonMarkup: "<div class='bigfoot-footnote__container' aria-hidden=\"true\"> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" aria-hidden=\"true\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> <i class=\"fa-solid fa-circle-plus\"></i> </button></div>"
+        }
+    );
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".post p a").attr("target","_blank");
+  $(".post p a").each(function() {
+    var href = $(this).attr("href");
+    if (!href.startsWith('http://') && !href.startsWith('https://') || href.includes('//kottke.org')) {
+      $(this).removeAttr("target");
+    }
+  });
+	$(".post p sup a").removeAttr("target");
+	$(".post .footnote a:last-of-type").removeAttr("target");
+
+  $("time.timeago").timeago().css("visibility", "visible");
+	
+	$('h2').widowFix();
+	
+	$(".post p strong:contains('Update:')").each(function() {
+	    $( this ).addClass("post-update-title").html("Update" + ((typeof $( this ).attr('title') !== typeof undefined && $( this ).attr('title') !== false) ? "<span class='post-update-timestamp'> ·  " + $( this ).attr("title") + "</span>" : ""));
+	  });
+    });
+</script>
+
+<link rel="stylesheet" href="ass.css">
+<link rel="stylesheet" href="https://kit.fontawesome.com/205dae25a8.css" crossorigin="anonymous">
+<link rel="stylesheet" href="/templates/2024/css/main.css?v=1" type="text/css" />
+<link rel="stylesheet" href="/templates/2024/css/bigfoot-default.css" type="text/css" />
+
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.kottke.org/main" />
+
+</head>
+<body>
+
+<div class="big-hug"><div class="grid-container">
+
+<div class="grid-item" id="logo-container">
+
+<div class="logo-grid">
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-12.jpg" alt="go to homepage"></a>
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-desktop">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-desktop" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate180 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-26.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate315 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-13.jpg" alt="go to homepage"></a>
+
+
+
+</div>
+
+
+<div class="logo-grid-item circle-margin"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/circle-mask.png" alt="go to homepage">
+
+
+
+</div>
+
+
+<div aria-hidden="true" class="logo-grid-item rotate270 ">
+<a href="/"><img src="/cdn-cgi/image/format=auto,fit=scale-down,width=200,metadata=none/images/2024/logo-colors/color-22.jpg" alt="go to homepage"></a>
+
+
+
+<a href="/"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="overlay-svg-mobile">
+<path id="circlePath" fill="none" stroke-width="0" stroke="hsl(0 100% 50% / 0.5)" d="M 10, 50 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"></path>
+<text id="text"><textPath id="textPath-mobile" href="#circlePath">KOTTKE DOT ORG</textPath></text>
+</svg></a>
+</div>
+
+
+<div class="logo-grid-item logo-grid-open-circle"></div>
+</div>
+</div>
+
+<div class="grid-item" id="sp1" aria-hidden="true"></div>
+
+<div class="grid-item" id="menu-container">
+<input type="checkbox" id="menu-btn" /><label id="menu-label" for="menu-btn"><div id="burger">MENU<i class="fa-regular fa-bars-staggered"></i></div></label>
+
+<nav>
+<label id="menu-label2" for="menu-btn"><div id="close-btn"><i class="fa-regular fa-xmark"></i></div></label>
+
+    <a href="/members side/signup.html" style="text-decoration: none;"><div id="login">Get started<i class="fa-light fa-right-to-bracket"></i></div></a>
+    <a href="/members side/members.html" style="text-decoration: none;"><div id="login">Login<i class="fa-light fa-right-to-bracket"></i></div></a>
+
+
+<ul>
+<li><a href="/ass.html">Home</a></li>
+<li><a href="/members side/members.html">Membership <i class="fa-light fa-sparkles" aria-hidden="true"></i></a></li>
+<!-- <li><a href="/members side/"></a></li> -->
+<li><a href="/newsletter side/news letter.html">Newsletter</a></li>
+<li><a href="/goods side/goods.html">Goods</a></li>
+<li><a href="/everfreash side/everfreash.html">Archive + Tags</a></li>
+<li><a href="/about side/about.html">About/Contact</a></li>
+</ul>
+
+<button id="theme-toggle" type="button">
+<span class="d-block-light d-none"><i class="fa-light fa-space-station-moon-construction"></i>dark mode</span>
+<span class="d-block-dark d-none"><i class="fa-light fa-sun-bright"></i></span>
+</button>
+
+</nav></div>
+
+<div class="grid-item" id="boring-container">
+
+<script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7DTK7I&placement=kottkeorg" ; id="_carbonads_js"></script>
+<div class="boring-title"> <a href="http://carbonads.net/?utm_source=kottkeorg&utm_medium=ad_via_link&utm_campaign=in_unit&utm_term=carbon" target="_blank"></a></div>
+</div>
+
+<div class="grid-item" id="extras-container">
+<div id="socials">
+
+ <h3>Stay Connected</h3>
+
+<!--<ul class="fa-ul">
+<li><a href="/newsletter"><span class="fa-li"><i class="fa-solid fa-newspaper" aria-hidden="true" style="color:#E474A2;"></i></span>Newsletter</a></li>
+<li><a href="http://feeds.kottke.org/main"><span class="fa-li"><i class="fa-solid fa-square-rss" aria-hidden="true" style="color:#ff6600;"></i></span>RSS Feed</a></li>
+<li><a href="https://www.threads.net/@jkottke"><span class="fa-li"><i class="fa-brands fa-threads" aria-hidden="true"></i></span>Threads</a></li>
+<li><a href="https://mastodon.social/@kottke" rel="me"><span class="fa-li"><i class="fa-brands fa-mastodon" aria-hidden="true" style="color:#4267B2;"></i></span>Mastodon</a></li>
+<li><a href="https://bsky.app/profile/kottke.org"><span class="fa-li"><i class="fa-kit fa-bluesky" aria-hidden="true" style="color:rgb(0, 133, 255);"></i></span>Bluesky</a></li>
+<li><a href="https://bonus.kottke.org/"><span class="fa-li"><i class="fa-brands fa-square-tumblr" aria-hidden="true" style="color:#FD492F;"></i></span>Tumblr</a></li>
+<li><a href="https://www.facebook.com/kottke.org"><span class="fa-li"><i class="fa-brands fa-facebook" aria-hidden="true" style="color:#4267B2;"></i></span>Facebook</a></li>
+</ul>
+ -->
+</div>
+
+
+
+<p class="smaller">This site is made possible by member support</a>. ❤️</p>
+
+<p class="smaller">Big thanks to our supporters for hosting the site and offering amazing tech support.</p>
+
+<p class="smaller">When you buy through links on kott.org, I may earn an affiliate commission. Thanks for supporting the site!</p>
+
+<p class="smaller"><strong>kott.org</strong> home of fine hypertext products since 1998.</p>
+
+<p class="smallerer no-underline"><a href="/tag/burgers" title="burgers">🍔</a>&nbsp; <a href="/tag/death" title="death">💀</a>&nbsp; <a href="/tag/photography" title="photography">📸</a>&nbsp; <a href="/tag/crying%20at%20work" title="crying at work">😭</a>&nbsp; <a href="/tag/black%20holes" title="black holes">🕳️</a>&nbsp; <a href="/tag/Old%20Custer" title="Old Custer">🤠</a>&nbsp; <a href="/tag/film%20school" title="film school">🎬</a>&nbsp; <a href="/tag/potatoes" title="potatoes">🥔</a></p></div>
+
+
+<div class="grid-item" id="content-container">
+
+
+<div id="updates"><a href="/"><i class="fa-light fa-glass-citrus"></i>Psst! Please refresh for new posts...</a></div>
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T22:27:25Z">May 10 @ 06:27 PM</time> by <a href="http://www.kott.org">William Kott</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/patriarchy-according-to-the-barbie-movie">Patriarchy According to The Barbie Movie</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/rK66s7VQmXE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+
+<p>Using the Barbie movie and other media (movies, TV shows) as a guide, <a href="https://www.youtube.com/watch?v=rK66s7VQmXE">Pop Culture Detective delves into what &#8220;patriarchy&#8221; actually means</a> (mirrors: <a href="https://www.patreon.com/posts/104004592">Patreon</a> & <a href="https://archive.org/details/patriarchy-according-to-the-barbie-movie">archive.org</a>).</p>
+
+<blockquote><p>We&#8217;re going to use the movie as a sort of primer to help explain what patriarchy actually is, what it isn&#8217;t, and how it ends up harming everyone, including men. To have any kind of productive conversation, we have to get over that defensiveness that so many men feel whenever they they come across the word &#8220;patriarchy&#8221;. Contrary to popular belief, patriarchy is not a synonym for men, nor is it a code word for masculinity, and it certainly has nothing to do with hating men.</p></blockquote>
+
+<p>The bibliography in the description of the video lists three books if you&#8217;d like to do some reading on the topic:</p>
+
+<ul><li><a href="https://www.amazon.com/exec/obidos/ASIN/1439911843/ref=nosim/0sil8">The Gender Knot: Unraveling Our Patriarchal Legacy</a> by Allan G Johnson.</li>
+<li><a href="https://www.amazon.com/exec/obidos/ASIN/0743456084/ref=nosim/0sil8">The Will to Change: Men, Masculinity, and Love</a> by bell hooks.</li>
+<li><a href="https://www.amazon.com/exec/obidos/ASIN/0520246985/ref=nosim/0sil8">Masculinities</a> by R. W. Connell.</li></ul>
+
+<p>(via <a href="https://waxy.org/">waxy</a>)</p>
+
+<p>P.S. While I was watching this video, YouTube removed it after Warner Brothers &#8220;blocked it on copyright grounds&#8221;. The channel is challenging the takedown and has uploaded it to <a href="https://www.patreon.com/posts/104004592">Patreon</a> and <a href="https://archive.org/details/patriarchy-according-to-the-barbie-movie">archive.org</a> in the meantime. (I&#8217;m leaving the embed in case it comes back to life.) This bullshit is so irritating — Google just totally letting massive media corporations decide what&#8217;s copyright infringing without recourse. And Warner (and Gerwig & Robbie too to some lesser extent)&#8230;you made the fucking movie to get a message across and to get people talking and someone posts a thoughtful video essay about the central issue of the film and you fucking take it down?</p>
+
+<ul class="post-tags"><li><a href="/tag/Barbie">Barbie</a></li><li><a href="/tag/feminism">feminism</a></li><li><a href="/tag/movies">movies</a></li><li><a href="/tag/video">video</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+
+
+<a class="share" href="https://kottke.org/24/05/patriarchy-according-to-the-barbie-movie"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+<div class="post recent-comments">
+<div class="rcmt-tabs">
+  <button class="rcmt-tab-button rcmt-active" data-rcmt-tab-target="rcmt-tab1">Active Threads</button>
+  <button class="rcmt-tab-button" data-rcmt-tab-target="rcmt-tab2">Your Threads</button>
+</div>
+<div id="rcmt-tab1" class="rcmt-tab-content">
+                          
+          <p>
+              <a href="/24/05/the-gentle-librarian#comment-section">The Gentle Librarian</a><br />
+              <span class="recent-comments-meta">
+                  19 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T22:06:27Z">2024-05-10T22:06:27Z</time>
+              </span>
+          </p>
+                  
+          <p>
+              <a href="/24/05/0044591-we-will-teach-you-how#comment-section">We Will Teach You How to Read | We Will Teach You How to Read. "This is our story, simplified: Life. Loss. Transformation. Love. Death....</a><br />
+              <span class="recent-comments-meta">
+                  1 comment &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T21:36:48Z">2024-05-10T21:36:48Z</time>
+              </span>
+          </p>
+                  
+          <p>
+              <a href="/24/05/0044588-this-is-the-first-im#comment-section">This is the first I'm learning of the spookily named Decline at 9 phenomenon, in which kids apparently lose interest in reading around...</a><br />
+              <span class="recent-comments-meta">
+                  2 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T18:37:54Z">2024-05-10T18:37:54Z</time>
+              </span>
+          </p>
+                  
+          <p>
+              <a href="/24/05/take-two-trips#comment-section">Take Two Trips</a><br />
+              <span class="recent-comments-meta">
+                  15 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T17:28:36Z">2024-05-10T17:28:36Z</time>
+              </span>
+          </p>
+                  
+          <p>
+              <a href="/24/05/0044540-cant-resist-an-i-called#comment-section">Can't resist an I Called Off My Wedding essay! ("On another plane ride, I watch Pride and Prejudice. Despite my tendency to be gay, Mr....</a><br />
+              <span class="recent-comments-meta">
+                  6 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T17:21:23Z">2024-05-10T17:21:23Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/miranda-lamberts-wranglers-chappell-roans-good-luck-babe#comment-section">Miranda Lambert's "Wranglers" & Chappell Roan's "Good Luck, Babe!"</a><br />
+              <span class="recent-comments-meta">
+                  1 comment &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T17:13:57Z">2024-05-10T17:13:57Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/wes-andersons-montblanc-commercial#comment-section">Wes Anderson's Montblanc Commercial</a><br />
+              <span class="recent-comments-meta">
+                  8 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T16:09:16Z">2024-05-10T16:09:16Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/0044595-ai-copilots-are-changing-#comment-section">AI Copilots Are Changing How Coding Is Taught; they can "free up time for us to teach higher-level thinking — for example, how to design...</a><br />
+              <span class="recent-comments-meta">
+                  2 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T15:59:11Z">2024-05-10T15:59:11Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/diary-comics-dec-21-25#comment-section">Diary Comics, Dec. 21-25</a><br />
+              <span class="recent-comments-meta">
+                  12 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T15:52:29Z">2024-05-10T15:52:29Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/0044556-i-missed-this-from-last#comment-section">I missed this from last year: the original "on the internet, nobody knows you're a dog" New Yorker cartoon sold for $175,000 at auction. </a><br />
+              <span class="recent-comments-meta">
+                  1 comment &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T15:16:07Z">2024-05-10T15:16:07Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/spring-and-summer-skies-amy-jean-porter#comment-section">Spring and Summer Skies by Amy Jean Porter</a><br />
+              <span class="recent-comments-meta">
+                  1 comment &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-10T01:17:27Z">2024-05-10T01:17:27Z</time>
+              </span>
+          </p>
+                  
+          <p style="display:none;">
+              <a href="/24/05/romanian-singer-maria-coman#comment-section">Romanian Singer Maria Coman</a><br />
+              <span class="recent-comments-meta">
+                  3 comments &nbsp; &nbsp; &nbsp;Latest:
+                  <time class="timeago timeago_short" datetime="2024-05-09T22:59:12Z">2024-05-09T22:59:12Z</time>
+              </span>
+          </p>
+      
+      <button class="recent-comments-more">Show More &nbsp;<i class="fa-light fa-chevron-down"></i></button>
+        
+</div>
+<div id="rcmt-tab2" class="rcmt-tab-content" style="display: none;">
+        
+                            <p class="p-reset">In order to leave comments on posts, you need to be a current kottke.org member. If you'd like to sign up for a membership to support the site and join the conversation, <a href="/members">you can explore your options here</a>.</p>
+
+                <p class="p-reset">Existing members can <a href="https://kottke.memberful.com/auth/sign_in">sign in here</a>. If you're a former member, you can <a href="https://kottke.memberful.com/auth/sign_in">renew your membership</a>.</p>
+                    
+        
+</div>
+</div><hr class="sep">
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T20:55:02Z">May 10 @ 04:55 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.lightspeedmagazine.com/fiction/we-will-teach-you-how-to-read-we-will-teach-you-how-to-read/">We Will Teach You How to Read | We Will Teach You How to Read</a>. &#8220;This is our story, simplified: Life. Loss. Transformation. Love. Death. Iteration.&#8221;</p>
+
+
+<a href="https://www.lightspeedmagazine.com/fiction/we-will-teach-you-how-to-read-we-will-teach-you-how-to-read/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44591.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44591.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44591.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">We Will Teach You How to Read | We Will Teach You How to Read - Lightspeed Magazine<span class="url-card-url"> · lightspeedmagazine.com</span></div>
+<div class="url-card-description">This is our story, simplified: Life. Loss. Transformation. Love. Death. Iteration. The first time you get our message, you only / find one thread. It mimics your language in / its simplest form, a single strand of words / laid end to end. You will have to work hard if / you want to understand us pro</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044591-we-will-teach-you-how#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044591-we-will-teach-you-how"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T19:58:08Z">May 10 @ 03:58 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+ &ensp;·&ensp; <span class="via">via <a href="https://jodiettenberg.substack.com/p/thirty-eight">jodiettenberg.substack.com</span> <i class="fa-light fa-arrow-up-right" aria-hidden="true"></i></a>
+
+</div>
+
+
+<p>A lovely essay: <a href="https://commonreader.wustl.edu/c/variations-on-the-theme-of-silence/">Variations on the Theme of Silence</a>. &#8220;I&#8217;ve begun to realize that you can listen to silence and learn from it. It has a quality and a dimension all its own.&#8221;</p>
+
+
+<a href="https://commonreader.wustl.edu/c/variations-on-the-theme-of-silence/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44599.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44599.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44599.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Variations on the Theme of Silence - Common Reader<span class="url-card-url"> · commonreader.wustl.edu</span></div>
+<div class="url-card-description">Silences that close us off, refusing connection, shoring up the ego at others’ expense—those are dead silences. But the letting-go sort, the silences that hold space or keep vigil for someone else? They are alive.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044599-a-lovely-essay-variations#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044599-a-lovely-essay-variations"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T19:03:53Z">May 10 @ 03:03 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://newatlas.com/marine/seabike-swimming-propeller/">Seabike</a> is an &#8220;underwater mobility device&#8221; that can propel you through the water at &#8220;superhuman speed&#8221;. You pedal with your feet, driving a small propellor.</p>
+
+
+<a href="https://newatlas.com/marine/seabike-swimming-propeller/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44592.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44592.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44592.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">'Underwater bicycle' propels swimmers forward at superhuman speed<span class="url-card-url"> · newatlas.com</span></div>
+<div class="url-card-description">French company Seabike has developed a swimming device that uses your own leg power to accelerate you through the water at superhuman speeds. This crank-driven pusher prop looks a bit like an underwater unicycle... We'd love to take one for a spin!</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044592-seabike-is-an-underwater-#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044592-seabike-is-an-underwater-"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T18:24:43Z">May 10 @ 02:24 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/nasa-visualization-of-flying-into-a-supermassive-black-hole">NASA Visualization of Flying Into a Supermassive Black Hole</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/chhcwk4-esM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+
+<p>NASA used one of their supercomputers to model <a href="https://science.nasa.gov/supermassive-black-holes/new-nasa-black-hole-visualization-takes-viewers-beyond-the-brink/">what it would look like if you flew into a supermassive black hole</a>. (You can watch the simulation <a href="https://www.youtube.com/watch?v=dGEIsnBRWGs">in a 360° view on YouTube</a>. I bet it looks great on a VR rig like Apple Vision Pro.)</p>
+
+<blockquote><p>The movies begin with the camera located nearly 400 million miles (640 million kilometers) away, with the black hole quickly filling the view. Along the way, the black hole&#8217;s disk, photon rings, and the night sky become increasingly distorted — and even form multiple images as their light traverses the increasingly warped space-time.</p>
+
+<p>In real time, the camera takes about 3 hours to fall to the event horizon, executing almost two complete 30-minute orbits along the way. But to anyone observing from afar, it would never quite get there. As space-time becomes ever more distorted closer to the horizon, the image of the camera would slow and then seem to freeze just shy of it. This is why astronomers originally referred to black holes as &#8220;frozen stars.&#8221;</p>
+
+<p>At the event horizon, even space-time itself flows inward at the speed of light, the cosmic speed limit. Once inside it, both the camera and the space-time in which it&#8217;s moving rush toward the black hole&#8217;s center — a one-dimensional point called a singularity, where the laws of physics as we know them cease to operate.</p>
+
+<p>&#8220;Once the camera crosses the horizon, its destruction by spaghettification is just 12.8 seconds away,&#8221; Schnittman said. From there, it&#8217;s only 79,500 miles (128,000 kilometers) to the singularity. This final leg of the voyage is over in the blink of an eye.</p></blockquote>
+
+<p>Black holes: so cool. (via <a href="https://thekidshouldseethis.com/post/nasa-plunges-into-a-black-hole-with-this-supercomputer-simulation">the kid should see this</a>)</p>
+
+<ul class="post-tags"><li><a href="/tag/black%20holes">black holes</a></li><li><a href="/tag/NASA">NASA</a></li><li><a href="/tag/physics">physics</a></li><li><a href="/tag/science">science</a></li><li><a href="/tag/video">video</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/nasa-visualization-of-flying-into-a-supermassive-black-hole#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/nasa-visualization-of-flying-into-a-supermassive-black-hole"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T17:46:14Z">May 10 @ 01:46 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://boingboing.net/2024/05/07/how-to-resurface-a-road-without-stopping-traffic.html">A neat technique to rebuild roads using a movable temporary bridge</a> — traffic goes over and the work happens in the shade.</p>
+
+
+<a href="https://boingboing.net/2024/05/07/how-to-resurface-a-road-without-stopping-traffic.html" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">How to resurface a road without stopping traffic<span class="url-card-url"> · boingboing.net</span></div>
+<div class="url-card-description">A video posted by Switzerland's Federal Roads Office, FEDRO, shows how they resurface a road without stopping traffic: they put a temporary elevated highway over it and work in the…</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044593-a-neat-technique-to-rebui#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044593-a-neat-technique-to-rebui"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T17:01:49Z">May 10 @ 01:01 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://tegowerk.eu/posts/bicycle-repair/">A love letter to bicycle maintenance and repair</a>. &#8220;Learning to fix bicycles has changed my outlook on manual labor, on the nature of work, and ultimately on life itself.&#8221;</p>
+
+
+<a href="https://tegowerk.eu/posts/bicycle-repair/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">A love letter to bicycle maintenance and repair<span class="url-card-url"> · tegowerk.eu</span></div>
+<div class="url-card-description">It was the 28th of June, 2020; the perfect summer day. I remember it distinctly because of two important events that took place on that day. The first was the unfortunate discovery that I am highly sensitive to the venomous hairs of the Oak processionary caterpillar. If you’ve never wished you could</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044594-a-love-letter-to-bicycle#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044594-a-love-letter-to-bicycle"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T16:23:53Z">May 10 @ 12:23 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/miranda-lamberts-wranglers-chappell-roans-good-luck-babe">Miranda Lambert&#8217;s &#8220;Wranglers&#8221; & Chappell Roan&#8217;s &#8220;Good Luck, Babe!&#8221;</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/ReJCMNTNB5w?si=51tvsyqNObohRL94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+<p>Here are a couple newish lyric videos that share a nice spirit of &#8220;Good riddance!!!&#8221;-ness. I learned of the Chappell Roan video from <a href="https://kottke.org/24/05/0044540-cant-resist-an-i-called#cmt-4766">a comment in a post from earlier this week</a> (comment of the week?? by my standards, anyway), and I love it. (Here&#8217;s Roan&#8217;s <a href="https://kottke.org/24/03/chappell-roan">awesome Tiny Desk Concert</a>, by the way.) And the Miranda Lambert reminds me of a specific situation in my own life and makes me smile. 🔥👖</p>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/1RKqOmSkGgM?si=Erg92TZ4yTWmC6n6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+
+<ul class="post-tags"><li><a href="/tag/Chappell%20Roan">Chappell Roan</a></li><li><a href="/tag/lyric%20videos">lyric videos</a></li><li><a href="/tag/Miranda%20Lambert">Miranda Lambert</a></li><li><a href="/tag/music">music</a></li><li><a href="/tag/video">video</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/miranda-lamberts-wranglers-chappell-roans-good-luck-babe#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/miranda-lamberts-wranglers-chappell-roans-good-luck-babe"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T15:35:18Z">May 10 @ 11:35 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://spectrum.ieee.org/ai-coding">AI Copilots Are Changing How Coding Is Taught</a>; they can &#8220;free up time for us to teach higher-level thinking — for example, how to design software, what is the right problem to solve, and what are the solutions.&#8221;</p>
+
+
+<a href="https://spectrum.ieee.org/ai-coding" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44595.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44595.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44595.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">AI Copilots Are Changing How Coding Is Taught<span class="url-card-url"> · spectrum.ieee.org</span></div>
+<div class="url-card-description">Professors are shifting away from syntax and emphasizing higher-level skills</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044595-ai-copilots-are-changing-#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 2</a>
+
+<a class="share" href="https://kottke.org/24/05/0044595-ai-copilots-are-changing-"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T14:50:52Z">May 10 @ 10:50 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://craigmod.com/ridgeline/187/">Some tips for long walks</a>. &#8220;We&#8217;re prone to lean forward when we walk. Over long distances, this wreaks havoc on one&#8217;s lower back and hips. As such, &#8216;head over hips&#8217; is something to be conscious of.&#8221;</p>
+
+
+<a href="https://craigmod.com/ridgeline/187/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44590.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44590.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44590.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Ben Pobjoy's Tips for Long Walks<span class="url-card-url"> · craigmod.com</span></div>
+<div class="url-card-description">Ultra-walker Ben tells us how he does it</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044590-some-tips-for-long-walks#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044590-some-tips-for-long-walks"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+<span class="vintage"><i class="fa-light fa-computer-classic"></i> <i class="fa-light fa-joystick"></i> <i class="fa-light fa-tv-retro"></i>&nbsp; vintage post from Feb 2014</span><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="/14/02/the-lowest-possible-score-in-super-mario-bros">The Lowest Possible Score in Super Mario Bros</a></h2>
+
+<p>If you play carefully by not stomping enemies, not collecting coins, not eating mushrooms or flowers, and hopping on the flagpole at the very last second, you can rescue the princess in Super Mario Bros with only 500 points.</p>
+
+<p><iframe loading="lazy" width="640" height="480" src="//www.youtube.com/embed/4kvT0dywaF8?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>One bit is surprisingly tricky:</p>
+
+<blockquote><p>How tough is that jump in 8-1? Well, the timing of the liftoff, the duration of holding the jump button, and the timing of the wall jump are all frame perfect. NES games run at 60 frames per second, which means all the necessary inputs need to be timed within 1/60 of a second. In addition, the starting position before running I used not only has to be on the right pixel, but also the x sub-pixel has to fall within a certain range (technical stuff blah blah blah). In short, it&#8217;s a pretty annoying jump.</p></blockquote>
+
+<p>When I was a kid, I left my NES on for three straight days to flip the score in SMB, using <a href="http://www.youtube.com/watch?v=NUx66ZEDjnQ">the 1UP trick</a> and another spot in the game to get many lives and points. Scoring lower would have been a lot quicker.</p>
+
+<ul class="post-tags"><li><a href="/tag/Super%20Mario%20Bros">Super Mario Bros</a></li><li><a href="/tag/timeless%20posts">timeless posts</a></li><li><a href="/tag/video">video</a></li><li><a href="/tag/video%20games">video games</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+
+
+<a class="share" href="/14/02/the-lowest-possible-score-in-super-mario-bros"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-10T13:22:25Z">May 10 @ 09:22 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>I missed this from last year: the original &#8220;on the internet, nobody knows you&#8217;re a dog&#8221; New Yorker cartoon <a href="https://news.artnet.com/market/new-yorker-cartoon-highest-price-auction-2381602">sold for $175,000 at auction</a>. </p>
+
+
+<a href="https://news.artnet.com/market/new-yorker-cartoon-highest-price-auction-2381602" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44556.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44556.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44556.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">The Most Reprinted 'New Yorker' Cartoon Fetches $175,000 at Auction—the Highest Price Ever Paid for a Single Comic | Artnet News<span class="url-card-url"> · news.artnet.com</span></div>
+<div class="url-card-description">Cartoonist Peter Steiner's 1993 New Yorker comic fetched the highest price for a single-panel comic at auction at $175,000.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044556-i-missed-this-from-last#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044556-i-missed-this-from-last"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T21:00:09Z">May  9 @ 05:00 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/spring-and-summer-skies-amy-jean-porter">Spring and Summer Skies by Amy Jean Porter</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/ajp4.png" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/ajp4.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/ajp4.png 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="1240"  border="0" alt="ajp4.png" /></p>
+
+<p>Just some lovely painted skies to end the day. (<a href="https://www.instagram.com/p/CqgfzVGrGhe/">Above</a>, <a href="https://www.instagram.com/p/CwtMGayrCDB/">below</a>.)</p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/ajp3.png" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/ajp3.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/ajp3.png 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="1245"  border="0" alt="ajp3.png" /></p>
+
+<ul class="post-tags"><li><a href="/tag/Amy%20Jean%20Porter">Amy Jean Porter</a></li><li><a href="/tag/art">art</a></li><li><a href="/tag/skies">skies</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/spring-and-summer-skies-amy-jean-porter#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/spring-and-summer-skies-amy-jean-porter"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T20:00:56Z">May  9 @ 04:00 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/romanian-singer-maria-coman">Romanian Singer Maria Coman</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Wjeburhcvww?si=IpPDaVWERpibZokx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br />
+&#8220;Was the human voice the very first musical instrument? I don’t know, but I expect it will end up as the very last one.&#8221; Tyler Cowen shared an eclectic <a href="https://www.tetragrammaton.com/content/tyler-cowen-choral-music">choral music playlist</a> the other day, with the preceding lines as an intro, and the idea of a &#8220;last instrument&#8221; was pleasingly creepy to me. It also reminded me of the above video, of artist Maria Coman singing the &#8220;Love is patient, love is kind&#8221; lines from the <a href="https://en.wikipedia.org/wiki/First_Epistle_to_the_Corinthians">First Epistle to the Corinthians</a>, from the Bible. (<a href="https://www.biblegateway.com/passage/?search=1%20Corinthians%2013%3A1-8&version=NIV">1 Corinthians 13: 1-8</a>.) More of Coman&#8217;s music can be found on her <a href="https://www.mariacoman.com/english">website</a>. And what is that church she&#8217;s in? </p>
+
+<ul class="post-tags"><li><a href="/tag/Maria%20Coman">Maria Coman</a></li><li><a href="/tag/music">music</a></li><li><a href="/tag/Tyler%20Cowen">Tyler Cowen</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/romanian-singer-maria-coman#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 3</a>
+
+<a class="share" href="https://kottke.org/24/05/romanian-singer-maria-coman"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T19:00:02Z">May  9 @ 03:00 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/take-two-trips">Take Two Trips</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/twotrips.jpeg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/twotrips.jpeg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/twotrips.jpeg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1214" height="937"  border="0" alt="twotrips.jpeg" /><br />
+A couple years ago, the NYT columnist David Brooks published a story called &#8220;<a href="https://www.nytimes.com/2022/06/02/opinion/david-brooks-life-hacks.html?unlocked_article_code=1.qk0.TpeI.w2BSgf3jl2jY&smid=url-share">The Greatest Life Hacks in the World (For Now)</a>.&#8221; It was mostly a tribute to Kevin Kelly&#8217;s famous <a href="https://kottke.org/24/04/0044444-from-kevin-kelly-on-the">life advice</a> posts, but Brooks added one of his own, and  I&#8217;ve thought of at least once a week since: </p>
+
+<blockquote><p>&#8230;over the last few years I have embraced, almost as a religious mantra, the idea that if you’re not sure you can carry it all, take two trips.</p></blockquote>
+
+<p>Take two trips. Nothing serious, but of all the &#8220;life advice&#8221; posts I&#8217;ve read, this is the one that&#8217;s changed my own life the most. Anyone else have something from an advice list that really made it into their brains/lives?</p>
+
+<p>The closest thing to a life advice aphorism <em>I&#8217;ve</em> ever come up with is maybe too gross to write down. And it&#8217;s running-themed, so it could be too specific. But maybe if I share it here, I will exorcise it from my brain: Sometimes you&#8217;re so worried about pooping your pants that you don&#8217;t realize you&#8217;ve already pooped your pants. </p>
+
+<ul class="post-tags"><li><a href="/tag/advice">advice</a></li><li><a href="/tag/David%20Brooks">David Brooks</a></li><li><a href="/tag/Kevin%20Kelly">Kevin Kelly</a></li><li><a href="/tag/take%20two%20trips">take two trips</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/take-two-trips#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 15</a>
+
+<a class="share" href="https://kottke.org/24/05/take-two-trips"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T18:00:49Z">May  9 @ 02:00 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>This is the first I&#8217;m learning of the spookily named <a href="https://slate.com/culture/2024/05/kids-reading-fun-books-decline-by-nine-crisis.html">Decline at 9 phenomenon</a>, in which kids apparently lose interest in reading around age nine. (Per the article, 57% of 8-year-olds claim to read for fun daily, vs. only 35% of 9-year-olds.) ¯\_(ツ)_/¯</p>
+
+
+<a href="https://slate.com/culture/2024/05/kids-reading-fun-books-decline-by-nine-crisis.html" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44588.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44588.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44588.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">The Real Reading Crisis Involves the Kids Who Don’t Have Phones<span class="url-card-url"> · slate.com</span></div>
+<div class="url-card-description">It’s not the pandemic. It’s not (only) the Devices. So what causes the “decline by 9”?</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044588-this-is-the-first-im#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 2</a>
+
+<a class="share" href="https://kottke.org/24/05/0044588-this-is-the-first-im"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T17:00:55Z">May  9 @ 01:00 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/diary-comics-dec-21-25">Diary Comics, Dec. 21-25</a></h2>
+
+<p>It&#8217;s another Thursday Afternoon With Edith, and here are a bunch more comics from my journal! I&#8217;m publishing everything through my new baby&#8217;s birth, because it seemed silly to draw it out any longer than I have! She&#8217;s now four months old. 👶 (<a href="https://kottke.org/24/05/diary-comics-dec-19-20">Previously</a>.)<br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21intro.png" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec21intro.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21intro.png 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="1042"  border="0" alt="dec21intro.png" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21intro4.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec21intro4.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21intro4.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="976"  border="0" alt="dec21intro4.jpg" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec21.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec21.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="7656"  border="0" alt="dec21.jpg" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec22.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec22.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec22.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="8324"  border="0" alt="dec22.jpg" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec23.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec23.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec23.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="9246"  border="0" alt="dec23.jpg" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec24.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec24.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec24.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="4989"  border="0" alt="dec24.jpg" /><br />
+<img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec25.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/dec25.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/dec25.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="7284"  border="0" alt="dec25.jpg" /></p>
+
+<ul class="post-tags"><li><a href="/tag/diary%20comics">diary comics</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/diary-comics-dec-21-25#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 12</a>
+
+<a class="share" href="https://kottke.org/24/05/diary-comics-dec-21-25"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-09T15:27:23Z">May  9 @ 11:27 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>&#8220;I maintain that the trash compactor onboard the Death Star in Star Wars is <a href="https://www.mcsweeneys.net/articles/on-the-implausibility-of-the-death-stars-trash-compactor">implausible, unworkable, and, moreover, inefficient</a>.&#8221;</p>
+
+
+<a href="https://www.mcsweeneys.net/articles/on-the-implausibility-of-the-death-stars-trash-compactor" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">On the Implausibility of the Death Star’s Trash Compactor<span class="url-card-url"> · mcsweeneys.net</span></div>
+<div class="url-card-description">I maintain that the trash compactor onboard the Death Star in Star Wars is implausible, unworkable, and, moreover, inefficient. The Trash Compactor...</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044554-i-maintain-that-the-trash#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 5</a>
+
+<a class="share" href="https://kottke.org/24/05/0044554-i-maintain-that-the-trash"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T22:28:58Z">May  8 @ 06:28 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/wes-andersons-montblanc-commercial">Wes Anderson&#8217;s Montblanc Commercial</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/tUSRyAha37w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+
+<p>Rupert Friend, Jason Schwartzman, and Wes Anderson star in an Anderson-directed commercial for Montblanc pens. You know the drill: it&#8217;s twee, it&#8217;s charming, it&#8217;s art-directed to within an inch of its life. Me personally? I love it.</p>
+
+<ul class="post-tags"><li><a href="/tag/advertising">advertising</a></li><li><a href="/tag/Montblanc">Montblanc</a></li><li><a href="/tag/video">video</a></li><li><a href="/tag/Wes%20Anderson">Wes Anderson</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/wes-andersons-montblanc-commercial#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 8</a>
+
+<a class="share" href="https://kottke.org/24/05/wes-andersons-montblanc-commercial"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T20:42:59Z">May  8 @ 04:42 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.nytimes.com/interactive/2024/05/03/opinion/global-billionaires-tax.html?unlocked_article_code=1.pk0.Gj_O.XGUgkTNHp0k3">It&#8217;s Time to Tax the Billionaires</a>. In 2018, &#8220;for the first time in the history of the United States, billionaires had a lower effective tax rate than working-class Americans&#8221;.</p>
+
+
+<a href="https://www.nytimes.com/interactive/2024/05/03/opinion/global-billionaires-tax.html?unlocked_article_code=1.pk0.Gj_O.XGUgkTNHp0k3" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44585.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44585.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44585.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Opinion | It’s Time to Tax the Billionaires<span class="url-card-url"> · nytimes.com</span></div>
+<div class="url-card-description">Billionaires are experts at avoiding taxes. By banding together, countries can make them pay up.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044585-its-time-to-tax-the#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044585-its-time-to-tax-the"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T19:28:39Z">May  8 @ 03:28 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/the-gentle-librarian">The Gentle Librarian</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/boox-palma.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/boox-palma.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/boox-palma.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1300" border="0" alt="Boox Palma" /></p>
+
+<p>As someone who reads almost exclusively on an ereader (a <a href="https://www.amazon.com/exec/obidos/ASIN/B09TMZKQR7/ref=nosim/0sil8">Kindle Paperwhite</a>), I have been intrigued by Craig Mod&#8217;s recent evangelism of <a href="https://www.amazon.com/exec/obidos/ASIN/B0CHF746JZ/ref=nosim/0sil8">the BOOX Palma</a>, a pocket-sized e-ink device that he&#8217;s been using as an ereader. In <a href="https://craigmod.com/roden/091/">the latest issue of his Roden newsletter</a>, he explains why he likes it so much:</p>
+
+<blockquote><p>Once you hold a Palma, you realize that for most situations it&#8217;s an ideal reading container. On the train? In line? In the waiting room at the doctor&#8217;s office? I&#8217;ve carried my Palma with me every day for the past three or so months with the goal of reaching for it rather than my iPhone. I call it the Gentle Librarian. Soft screen, clean interface, no SIM card and so mostly no internet (it loads up with new articles while at home on Wi-Fi; I can always tether to my phone to update or add something new to read on the go), a refresh rate that is plausible enough on which to watch movies (!! hypnotizing, actually, like watching a magic trick, like what Victorians may have imagined &#8220;computer screens&#8221; to look like) but not really responsive enough to seduce you into installing social media apps. There&#8217;s a lot of friction in this little bugger, and it turns out a bit of friction is a good friend of the kind of reading we love.</p></blockquote>
+
+<p>Hmm. Hmm! Like Mod, I&#8217;m frustrated with Amazon&#8217;s lack of vision and activity on the ereader front and lament the time I spend on my Casino Rectangle / <a href="https://www.threads.net/@craigmod/post/C6aLgHJyDWG">Dingdong Casino of Hell</a>. Maybe I&#8217;ll try the Palma out&#8230;</p>
+
+<ul class="post-tags"><li><a href="/tag/Amazon">Amazon</a></li><li><a href="/tag/books">books</a></li><li><a href="/tag/BOOX">BOOX</a></li><li><a href="/tag/Craig%20Mod">Craig Mod</a></li><li><a href="/tag/Kindle">Kindle</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/the-gentle-librarian#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 19</a>
+
+<a class="share" href="https://kottke.org/24/05/the-gentle-librarian"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T18:51:45Z">May  8 @ 02:51 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://arstechnica.com/gaming/2024/05/hackers-discover-how-to-reprogram-nes-tetris-from-within-the-game/">Hackers can reprogram NES Tetris *from within the game*</a>, which may lead to new high scores. The hack involves &#8220;reading the game&#8217;s high score tables as machine code instructions&#8221;.</p>
+
+
+<a href="https://arstechnica.com/gaming/2024/05/hackers-discover-how-to-reprogram-nes-tetris-from-within-the-game/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44582.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44582.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44582.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Hackers discover how to reprogram NES Tetris from within the game<span class="url-card-url"> · arstechnica.com</span></div>
+<div class="url-card-description">New method could help high-score chasers trying to avoid game-ending crashes.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044582-hackers-can-reprogram-nes#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 2</a>
+
+<a class="share" href="https://kottke.org/24/05/0044582-hackers-can-reprogram-nes"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T18:14:59Z">May  8 @ 02:14 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>After launching last month, <a href="https://apps.apple.com/us/app/delta-game-emulator/id1048524688">the Delta game emulator</a> has been <a href="https://www.theverge.com/24150467/delta-emulator-apple-app-voice-notes-ai-vergecast">one of the most popular apps in Apple&#8217;s App Store</a>. It allows you to play NES, GB, SNES, N64, and DS games on your iPhone or Mac.</p>
+
+
+<a href="https://apps.apple.com/us/app/delta-game-emulator/id1048524688" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44579.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44579.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44579.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">‎Delta - Game Emulator<span class="url-card-url"> · apps.apple.com</span></div>
+<div class="url-card-description">‎Delta is an all-in-one emulator for iOS. Delta builds upon the strengths of its predecessor, GBA4iOS, while expanding to include support for more game systems such as NES, SNES, N64, and DS.  FEATURES  Supported Game Systems • Nintendo Entertainment System • Super Nintendo Entertainment System • Ni</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044579-after-launching-last-mont#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044579-after-launching-last-mont"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T17:48:22Z">May  8 @ 01:48 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Attempting to thwart ticket scalpers, Billie Eilish is selling supposedly &#8220;untransferable&#8221; tickets for her new tour. <a href="https://www.404media.co/billie-eilishs-untransferable-tickets-immediately-resold-by-ticket-resellers/">404 Media has the details on how these tickets can actually be transferred</a>.</p>
+
+
+<a href="https://www.404media.co/billie-eilishs-untransferable-tickets-immediately-resold-by-ticket-resellers/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44580.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44580.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44580.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">How Resellers Are Transferring Billie Eilish's 'Untransferable' Tickets<span class="url-card-url"> · 404media.co</span></div>
+<div class="url-card-description">Ticketmaster's untransferable tickets can be—and are—transferred by ticket brokers all the time.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044580-attempting-to-thwart-tick#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044580-attempting-to-thwart-tick"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T17:05:42Z">May  8 @ 01:05 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/fantastical-portraits-of-cate-blanchett">Fantastical Portraits of Cate Blanchett</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/cate-blanchett-haunted.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/cate-blanchett-haunted.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/cate-blanchett-haunted.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1000" border="0" alt="photo of Cate Blanchett" /></p>
+
+<p>I love <a href="https://www.jackdavison.co.uk/cate-blanchett-nyt-magazine-2022-01">these (haunting? are they haunting?) photos of Cate Blanchett taken by Jack Davison</a> for <a href="https://www.nytimes.com/2022/10/11/magazine/cate-blanchett-tar-movie.html?unlocked_article_code=1.qU0.EUNi.y9t9vZF4OtjE">this 2022 profile in the NY Times Magazine</a>.</p>
+
+<blockquote><p>When the magazine asked the photographer Jack Davison to create the art for this story, he took inspiration from Cate Blanchett&#8217;s legendary gift at transforming herself on film. Over the course of a four-hour shoot, across nine different setups, Davison made the fantastical, perspective-bending portraits that appear here.</p></blockquote>
+
+<p>(via <a href="https://www.threads.net/@gray/post/C6YyomoK1mR">@gray</a>)</p>
+
+<ul class="post-tags"><li><a href="/tag/Cate%20Blanchett">Cate Blanchett</a></li><li><a href="/tag/Jack%20Davison">Jack Davison</a></li><li><a href="/tag/photography">photography</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/fantastical-portraits-of-cate-blanchett#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/fantastical-portraits-of-cate-blanchett"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T16:02:47Z">May  8 @ 12:02 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>I&#8217;d missed that Elena Ferrante&#8217;s My Brilliant Friend <a href="https://www.amazon.com/exec/obidos/ASIN/1609459466/ref=nosim/0sil8">now has a graphic novel adaptation</a>.</p>
+
+
+<a href="https://www.amazon.com/exec/obidos/ASIN/1609459466/ref=nosim/0sil8" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44569.png 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44569.png 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44569.png" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">My Brilliant Friend: The Graphic Novel: Based on the novel by Elena Ferrante<span class="url-card-url"> · amazon.com</span></div>
+<div class="url-card-description"></div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044569-id-missed-that-elena-ferr#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044569-id-missed-that-elena-ferr"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T15:15:37Z">May  8 @ 11:15 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/parents-micro-targeted-by-their-kids-hard-drawn-ads-on-facebook">Parents Micro-Targeted by Their Kids&#8217; Hand-Drawn Ads on Facebook</a></h2>
+
+<p>In 2019, artist and engineer Tega Brain gave some kids the opportunity to create targeted advertising relevant to their particular interests: <a href="https://tegabrain.com/Bushwick-Analytica">Bushwick Analytica</a>.</p>
+
+<blockquote><p>Politicians and marketers now use data and targeted advertising to try to change our behaviors and influence our worldviews. But why should these tools only be available to people in places like Washington DC, Manhattan and London?</p></blockquote>
+
+<p>Some of the kids&#8217; ads targeted their parents:</p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-01.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/micro-target-kids-01.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-01.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1301" height="731" border="0" alt="a hand-drawn advertisement that reads 'I should have a dog. Get your kids a dog!'" /></p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-02.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/micro-target-kids-02.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-02.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="731" border="0" alt="a hand-drawn advertisement that reads 'No school on Mondays'" /></p>
+
+<p>While others were aimed at people who could help with causes the kids were interested in:</p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-03.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/micro-target-kids-03.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/micro-target-kids-03.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="733" border="0" alt="a hand-drawn advertisement that reads 'Protect the Homeless. Justice for everyone.'" /></p>
+
+<p>(via <a href="https://denniscrowley.com/">dens</a>)</p>
+
+<ul class="post-tags"><li><a href="/tag/advertising">advertising</a></li><li><a href="/tag/art">art</a></li><li><a href="/tag/Facebook">Facebook</a></li><li><a href="/tag/Tega%20Brain">Tega Brain</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/parents-micro-targeted-by-their-kids-hard-drawn-ads-on-facebook#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/parents-micro-targeted-by-their-kids-hard-drawn-ads-on-facebook"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T14:26:28Z">May  8 @ 10:26 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.seriouseats.com/alka-seltzer-cheese-sauce-recipe-8643844">The Cheese-Making Magic of Alka-Seltzer, Explained</a>. You can make a creamy nacho cheese sauce at home using Alka-Seltzer — its ingredients react to form an emulsifying agent. Plop, plop, Cheez Whiz, oh what a trick this is&#8230;</p>
+
+
+<a href="https://www.seriouseats.com/alka-seltzer-cheese-sauce-recipe-8643844" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44575.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44575.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44575.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">The Genius Ingredient for Perfect Gooey Cheese Sauce<span class="url-card-url"> · seriouseats.com</span></div>
+<div class="url-card-description">Alka-Seltzer contains two key ingredients—baking soda and citric acid—that react to form sodium citrate, the emulsifying salt that is the secret to all processed cheese sauces. This recipe leverages that salt to give you the smoothest, creamiest cheese sauce in under 5 minutes.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044575-the-cheese-making-magic-o#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 4</a>
+
+<a class="share" href="https://kottke.org/24/05/0044575-the-cheese-making-magic-o"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-08T13:49:19Z">May  8 @ 09:49 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.sapiens.org/culture/freediving-belonging-kinship/">A short essay on freediving</a>. &#8220;In the mindful state of freediving, I don&#8217;t panic. I find stillness. Centeredness. Calm. I am belonging in the moment. I&#8217;ve retrained my mind to be underwater.&#8221; I love mind vs. body stuff like this.</p>
+
+
+<a href="https://www.sapiens.org/culture/freediving-belonging-kinship/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44572.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44572.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44572.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">A Freediver Finds Belonging Without Breath<span class="url-card-url"> · sapiens.org</span></div>
+<div class="url-card-description">An anthropologist takes us on a journey “down the line” to explore what freediving can teach us about ourselves and kinship with the sea.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044572-a-short-essay-on-freedivi#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044572-a-short-essay-on-freedivi"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T21:46:44Z">May  7 @ 05:46 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>“For the first time ever, <a href="https://www.niemanlab.org/2024/05/this-years-pulitzer-prizes-were-a-coming-out-party-for-online-media-and-a-marker-of-local-newspapers-decline/">more online news sites produced Pulitzer finalists than newspapers did</a>.“ </p>
+
+
+<a href="https://www.niemanlab.org/2024/05/this-years-pulitzer-prizes-were-a-coming-out-party-for-online-media-and-a-marker-of-local-newspapers-decline/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44574.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44574.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44574.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">This year’s Pulitzer Prizes were a coming-out party for online media — and a marker of local newspapers’ decline<span class="url-card-url"> · niemanlab.org</span></div>
+<div class="url-card-description">For the first time ever, more online news sites produced Pulitzer finalists than newspapers did.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044574-for-the-first-time-ever#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044574-for-the-first-time-ever"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+<span class="vintage"><i class="fa-light fa-computer-classic"></i> <i class="fa-light fa-joystick"></i> <i class="fa-light fa-tv-retro"></i>&nbsp; vintage post from Mar 2013</span><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="/13/03/how-rope-was-made-the-old-fashioned-way">How Rope Was Made the Old Fashioned Way</a></h2>
+
+<p>This is a clip from the BBC series <a href="http://edwardianfarm.co.uk/">Edwardian Farm</a> that shows how rope was made in the olden days.</p>
+
+<p><iframe loading="lazy" width="640" height="480" src="https://www.youtube.com/embed/By8K5mKSwDA?rel=0" frameborder="0" allowfullscreen></iframe></p>
+
+<p>The entire series is <a href="http://topdocumentaryfilms.com/edwardian-farm/">available to watch online</a>.</p>
+
+<ul class="post-tags"><li><a href="/tag/Edwardian%20Farm">Edwardian Farm</a></li><li><a href="/tag/how%20to">how to</a></li><li><a href="/tag/timeless%20posts">timeless posts</a></li><li><a href="/tag/TV">TV</a></li><li><a href="/tag/video">video</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+
+
+<a class="share" href="/13/03/how-rope-was-made-the-old-fashioned-way"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T18:06:51Z">May  7 @ 02:06 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://pompeiisites.org/en/comunicati/pompeii-a-dining-room-decorated-with-characters-and-subjects-inspired-by-the-trojan-war-has-emerged-from-the-new-excavations/">New Pompeii excavations reveal frescoes & mosaics about the Trojan War</a>. &#8220;The flickering light of the lamps had the effect of making the images appear to move, especially after a few glasses of good Campanian wine.&#8221;</p>
+
+
+<a href="https://pompeiisites.org/en/comunicati/pompeii-a-dining-room-decorated-with-characters-and-subjects-inspired-by-the-trojan-war-has-emerged-from-the-new-excavations/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44573.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44573.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44573.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Pompeii: a dining room decorated with characters and subjects inspired by the Trojan war has emerged from the new excavations - Pompeii Sites<span class="url-card-url"> · pompeiisites.org</span></div>
+<div class="url-card-description">A spectacular banqueting room with elegant black walls, decorated with mythological characters and subjects inspired by the Trojan War, is one of the rooms recently been brought to light during the excavations currently underway in insula (block) 10 of Regio IX at Pompeii and which is now completely</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044573-new-pompeii-excavations-r#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044573-new-pompeii-excavations-r"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T17:03:10Z">May  7 @ 01:03 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/the-light-eaters-and-plant-intelligence">The Light Eaters and Plant Intelligence</a></h2>
+
+<p>Zoë Schlanger&#8217;s new book (out today) sounds really interesting: <a href="https://www.amazon.com/exec/obidos/ASIN/0063073854/ref=nosim/0sil8">The Light Eaters: How the Unseen World of Plant Intelligence Offers a New Understanding of Life on Earth</a> (<a href="https://bookshop.org/a/2966/9780063073852">Bookshop.org</a>).</p>
+
+<blockquote><p>It takes tremendous biological creativity to be a plant. To survive and thrive while rooted in a single spot, plants have adapted ingenious methods of survival. In recent years, scientists have learned about their ability to communicate, recognize their kin and behave socially, hear sounds, morph their bodies to blend into their surroundings, store useful memories that inform their life cycle, and trick animals into behaving to their benefit, to name just a few remarkable talents.</p></blockquote>
+
+<p>I heard about it <a href="https://www.npr.org/2024/05/06/1249310672/plant-intelligence-the-light-eaters-zoe-schlanger">from NPR&#8217;s Fresh Air</a> — check out this completely metal behavior:</p>
+
+<blockquote><p>Schlanger notes that some tomato plants, when being eaten by caterpillars, fill their leaves with a chemical that makes them so unappetizing that the caterpillars start eating each other instead. Corn plants have been known to sample the saliva of predator caterpillars — and then use that information to emit a chemical to attract a parasitic wasp that will attack the caterpillar.</p>
+
+<p>Schlanger acknowledges that our understanding of plants is still developing — as are the definitions of &#8220;intelligence&#8221; and &#8220;consciousness.&#8221; &#8220;Science is there [for] observation and to experiment, but it can&#8217;t answer questions about this ineffable, squishy concept of intelligence and consciousness,&#8221; she says.</p></blockquote>
+
+<ul class="post-tags"><li><a href="/tag/books">books</a></li><li><a href="/tag/plants">plants</a></li><li><a href="/tag/The%20Light%20Eaters">The Light Eaters</a></li><li><a href="/tag/Zoe%20Schlanger">Zoe Schlanger</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/the-light-eaters-and-plant-intelligence#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 3</a>
+
+<a class="share" href="https://kottke.org/24/05/the-light-eaters-and-plant-intelligence"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T16:59:23Z">May  7 @ 12:59 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>I&#8217;ve known Anil Dash for 20+ years and I still keep finding out <a href="https://www.threads.net/@anildash/post/C6jxIoHvelC">all sorts of crazy things about him.</a> &#8220;Fun fact: Prince bought the house used in the filming of Purple Rain right after I tweeted at him that it was on sale.&#8221;</p>
+
+
+<a href="https://www.threads.net/@anildash/post/C6jxIoHvelC" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">Anil Dash (@anildash) on Threads<span class="url-card-url"> · threads.net</span></div>
+<div class="url-card-description">I know the AirBNB folks have been working on this for years, so I'm glad this fun & funny little opportunity is opening up, especially for whatever lucky folks get to have Wendy & Lisa be part of the...</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044552-ive-known-anil-dash-for#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044552-ive-known-anil-dash-for"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T16:15:25Z">May  7 @ 12:15 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Did you know that &#8220;Broccolini&#8221; is actually a registered trademark of Del Monte? <a href="https://www.techdirt.com/2024/05/06/after-over-two-decades-of-non-enforcement-produce-company-invokes-trademark-on-broccolini/">That they haven&#8217;t enforced for decades?</a> &#8220;That, generally speaking, is how marks lose their distinctive nature and become generic.&#8221;</p>
+
+
+<a href="https://www.techdirt.com/2024/05/06/after-over-two-decades-of-non-enforcement-produce-company-invokes-trademark-on-broccolini/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">After Over Two Decades Of Non-Enforcement, Produce Company Invokes Trademark On ‘Broccolini’<span class="url-card-url"> · techdirt.com</span></div>
+<div class="url-card-description">I think it best to start this post off with an admission: I had no idea that “broccolini” was not the name of an actual vegetable, but rather a trademarked brand name. I can’t see…</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044571-did-you-know-that-broccol#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044571-did-you-know-that-broccol"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T15:38:20Z">May  7 @ 11:38 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/an-update-on-the-beloved-broccoli-tree">An Update on the Beloved Broccoli Tree</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/broc-tree-20-01.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/broc-tree-20-01.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/broc-tree-20-01.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1080" height="1080" border="0" alt="photo of a tree that resembles a broccoli floret" /></p>
+
+<p>Do you remember <a href="https://kottke.org/15/06/the-broccoli-tree">the Broccoli Tree</a>? Photographer Patrik Svedberg photographed a Swedish tree that resembled a broccoli floret over a number of years, posted the results <a href="https://www.instagram.com/thebroccolitree">to Instagram</a>, and made the tree internet famous. Then some asshole vandal sawed through the branches of the tree and <a href="https://kottke.org/17/09/rip-the-broccoli-tree">it had to be chopped down</a>. John Green <a href="https://kottke.org/18/03/to-share-something-is-to-risk-losing-it">eulogized the Broccoli Tree in a video</a>:</p>
+
+<blockquote><p>To share something is to risk losing it, especially in a world where sharing occurs at tremendous scale and where everyone seems to want to be noticed, even if only for cutting down a beloved tree.</p></blockquote>
+
+<p>Well, the stump of the tree was left in the hopes that it would grow again and I&#8217;m pleased to say that it has — <a href="https://www.instagram.com/p/CPVq7B0nT4T/">here&#8217;s a photo from three years ago</a>:</p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/broc-tree-20-02.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/broc-tree-20-02.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/broc-tree-20-02.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1625" border="0" alt="photo of a group of people gathered in front of a tree that looks like a bush" /></p>
+
+<p>You can even <a href="https://maps.app.goo.gl/sfJRa8h3ep9KtmM86">see it on Google Maps</a>. I&#8217;m glad the tree is growing again but wish the destruction hadn&#8217;t happened in the first place.</p>
+
+<ul class="post-tags"><li><a href="/tag/Patrik%20Svedberg">Patrik Svedberg</a></li><li><a href="/tag/photography">photography</a></li><li><a href="/tag/trees">trees</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/an-update-on-the-beloved-broccoli-tree#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/an-update-on-the-beloved-broccoli-tree"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T14:56:47Z">May  7 @ 10:56 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+ &ensp;·&ensp; <span class="via">via <a href="https://www.openculture.com/2024/05/high-tech-analysis-of-ancient-scroll-reveals-platos-burial-site-and-final-hours.html">openculture.com</span> <i class="fa-light fa-arrow-up-right" aria-hidden="true"></i></a>
+
+</div>
+
+
+<p><a href="https://www.theguardian.com/books/2024/apr/29/herculaneum-scroll-plato-final-hours-burial-site">Thanks to a newly deciphered Herculaneum scroll</a>, researchers have pinpointed the location of Plato&#8217;s grave in Athens and know what he did on his final day.</p>
+
+
+<a href="https://www.theguardian.com/books/2024/apr/29/herculaneum-scroll-plato-final-hours-burial-site" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44567.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44567.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44567.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Plato’s final hours recounted in scroll found in Vesuvius ash<span class="url-card-url"> · theguardian.com</span></div>
+<div class="url-card-description">Newly deciphered passages outline Greek philosopher’s burial place and describe critique of slave musician</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044567-thanks-to-a-newly-deciphe#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044567-thanks-to-a-newly-deciphe"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T14:11:29Z">May  7 @ 10:11 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+ &ensp;·&ensp; <span class="via">via <a href="https://daringfireball.net/">daringfireball.net</span> <i class="fa-light fa-arrow-up-right" aria-hidden="true"></i></a>
+
+</div>
+
+
+<p><a href="https://www.youtube.com/watch?v=yk6UVnMn9ts">This is the goofiest, dorkiest advertising/marketing I&#8217;ve ever seen from Apple</a> — and also really fun. See if you can <a href="https://sixcolors.com/link/2024/05/apples-star-wars-themed-precision-finding-ad/">find all of the Star Wars Easter eggs</a>.</p>
+
+
+<a href="https://www.youtube.com/watch?v=yk6UVnMn9ts" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44568.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44568.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44568.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">iPhone 15 Precision Finding | Find Your Friends | Apple<span class="url-card-url"> · youtube.com</span></div>
+<div class="url-card-description">"Find your friends with Precision Finding on iPhone 15 and iPhone 15 Pro.
+
+Learn more about iPhone 15 at https://apple.co/2zOn11z and Find My at https://apple.co/3Qo8BN5.
+
+Audio Descriptions: https://apple.co/4bdnc68
+
+“All My Friends” by Channel Tres: https://apple.co/Channel-Tres-All-My-Friends
+
+We</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044568-this-is-the-goofiest-dork#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 3</a>
+
+<a class="share" href="https://kottke.org/24/05/0044568-this-is-the-goofiest-dork"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-07T13:33:30Z">May  7 @ 09:33 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>A North Yorkshire county authority banned apostrophes on street signs <a href="https://www.bbc.com/news/uk-england-york-north-yorkshire-68942321">because they cause problems with poorly designed computer systems</a>. &#8220;I walk past the sign every day and it riles my blood to see inappropriate grammar or punctuation.&#8221;</p>
+
+
+<a href="https://www.bbc.com/news/uk-england-york-north-yorkshire-68942321" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44562.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44562.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44562.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">North Yorkshire Council to phase out apostrophe use on street signs<span class="url-card-url"> · bbc.com</span></div>
+<div class="url-card-description">A North Yorkshire resident says the punctuation changes risk "everything going downhill".</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044562-a-north-yorkshire-county-#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 2</a>
+
+<a class="share" href="https://kottke.org/24/05/0044562-a-north-yorkshire-county-"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T21:35:06Z">May  6 @ 05:35 PM</time> by <a href="http://www.edithzimmerman.com">Edith Zimmerman</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<div class="post-main no-fade"><h2><a href="https://kottke.org/24/05/cj-sansom-novels">The Shardlake Series</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/cjsansom1.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/cjsansom1.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/cjsansom1.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1000" height="483"  border="0" alt="cjsansom1.jpg" /></p>
+
+<p>In honor of novelist <a href="https://www.theguardian.com/books/2024/apr/29/cj-sansom-author-of-the-shardlake-novels-dies-aged-71">C.J. Sansom&#8217;s passing</a>, I wanted to recommend his marvelous <a href="https://en.wikipedia.org/wiki/Shardlake_series">Matthew Shardlake historical crime thrillers</a>, for anyone who isn&#8217;t already familiar. I definitely learned and remembered more about Thomas Cromwell-era England from <a href="https://www.amazon.com/exec/obidos/ASIN/B002TZ3EPM/ref=nosim/0sil8">Dissolution</a> than I did from any textbooks (not that I&#8217;ve read any of those in a while, but still). It was all very visceral in a damp-stone-monastery, heavy cloaks, burning candles, teeth-being-pulled-in-the-Tower-of-London kind of way. Also his novels are just super fun, and the Matthew Shardlake character &#8212; a sort of proto-detective lawyer &#8212; is especially memorable. </p>
+
+<ul class="post-tags"><li><a href="/tag/books">books</a></li><li><a href="/tag/C.J.%20Sansom">C.J. Sansom</a></li></ul>
+</ul>
+
+<button class="show-more">Show Full Post</button>
+</div>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/cj-sansom-novels#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 4</a>
+
+<a class="share" href="https://kottke.org/24/05/cj-sansom-novels"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T20:43:32Z">May  6 @ 04:43 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Hi, I am <a href="https://www.nytimes.com/2024/05/06/arts/music/kendrick-lamar-drake-explainer.html?unlocked_article_code=1.p00.wul5.N47_cfSFPmkO">Needs to Read About A Rap Beef in the NY Times to Understand What&#8217;s Going On With Drake and Kendrick Lamar</a> years old.</p>
+
+
+<a href="https://www.nytimes.com/2024/05/06/arts/music/kendrick-lamar-drake-explainer.html?unlocked_article_code=1.p00.wul5.N47_cfSFPmkO" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44566.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44566.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44566.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Kendrick Lamar vs. Drake Beef Goes Nuclear: What to Know<span class="url-card-url"> · nytimes.com</span></div>
+<div class="url-card-description">The two rappers had circled one another for more than a decade, but their attacks turned relentless and very personal in a slew of tracks released over the weekend.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044566-i-am-needs-to-read#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 6</a>
+
+<a class="share" href="https://kottke.org/24/05/0044566-i-am-needs-to-read"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T20:03:58Z">May  6 @ 04:03 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.newyorker.com/news/essay/shibboleth-the-role-of-words-in-the-campus-protests">Zadie Smith</a>: &#8220;To send the police in to arrest young people peacefully insisting upon a ceasefire represents a moral injury to us all. To do it with violence is a scandal. How could they do less than protest, in this moment?&#8221;</p>
+
+
+<a href="https://www.newyorker.com/news/essay/shibboleth-the-role-of-words-in-the-campus-protests" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44561.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44561.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44561.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">The Role of Words in the Campus Protests<span class="url-card-url"> · newyorker.com</span></div>
+<div class="url-card-description">In the campus protests over the war in Gaza, language and rhetoric are—as they have always been when it comes to Israel and Palestine—weapons of mass destruction.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+
+
+<a class="share" href="https://kottke.org/24/05/0044561-zadie-smith-to-send-the"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T19:15:03Z">May  6 @ 03:15 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/squaring-the-reality-of-what-we-see">Squaring the Reality of What We See</a></h2>
+
+<p>Gareth Fearn writing for the London Review of Books about the student protests on US campuses: <a href="https://www.lrb.co.uk/blog/2024/may/liberalism-without-accountability">Liberalism without Accountability</a>.</p>
+
+<blockquote><p>This is a toxic combination: universities reliant on investment portfolios in a system where mega-profits are made by companies that threaten and destroy human life, influenced by an increasingly radicalised class of billionaires, teaching students whose degrees won&#8217;t earn them enough to pay off their loans, managed by supine administrators threatened by (or willingly collaborating with) a reactionary right, who have decided that young people&#8217;s minds are being turned against capitalism not by their own lived experience of austerity and racialised police violence but by &#8216;woke Marxist professors&#8217;. This situation has now met with a live-streamed genocide which is supported, and brazenly lied about, by political leaders and commentators who claim to stand for truth and justice. Students, like much of the public, cannot square the reality of what they see with the world as constructed by politicians and the media.</p>
+
+<p>Under such circumstances, pitching tents, raising placards and demanding divestment are really quite mild-mannered responses. That they have been met, in many US universities, with militarised policing reflects the fragility of liberalism — in the face of the growing hegemony of the conservative right as well as its own inability to offer a future even to Ivy League college students, let alone the less privileged.</p></blockquote>
+
+<ul class="post-tags"><li><a href="/tag/education">education</a></li><li><a href="/tag/Gareth%20Fearn">Gareth Fearn</a></li><li><a href="/tag/policing">policing</a></li><li><a href="/tag/politics">politics</a></li><li><a href="/tag/USA">USA</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+
+
+<a class="share" href="https://kottke.org/24/05/squaring-the-reality-of-what-we-see"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T18:28:33Z">May  6 @ 02:28 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Hey everyone, it&#8217;s Hot Frank Summer! Aka <a href="https://bsky.app/profile/rnrhamster.bsky.social/post/3krojv5xy5s2e">we&#8217;re all reading Mary Shelley&#8217;s Frankenstein this summer</a>. Just a few pages a day from May 15 to June 12 — <a href="https://docs.google.com/spreadsheets/d/1GJz9SBYk_XX5ECLlDp8YVG5zsM9HWFiwTpApYcJE4FU/edit#gid=0">check out the schedule</a> and put it in your calendar. #HotFrankSummer</p>
+
+
+<a href="https://bsky.app/profile/rnrhamster.bsky.social/post/3krojv5xy5s2e" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44564.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44564.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44564.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">Cavycore (@rnrhamster.bsky.social)<span class="url-card-url"> · bsky.app</span></div>
+<div class="url-card-description">Just a reminder, we'll be starting Mary Shelley's Frankenstein (1831 edition) (also known as #HotFrankSummer) on May 15th.  Schedule: https://docs.google.com/spreadsheets/d/1GJz9SBYk_XX5ECLlDp8YVG5zsM9HWFiwTpApYcJE4FU/edit#gid=0 Cross-posting for the last time, don't worry! Add your handle below if </div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044564-hey-everyone-its-hot-fran#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 8</a>
+
+<a class="share" href="https://kottke.org/24/05/0044564-hey-everyone-its-hot-fran"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T17:53:18Z">May  6 @ 01:53 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p><a href="https://www.instagram.com/reel/Ch7abTBAhbx/">Booting up an Apple IIc to play Lode Runner</a>. Oh maaaaaan, this takes me back. I played so much Lode Runner as a kid. And made probably 50 of my own levels with the built-in level editor.</p>
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044557-booting-up-an-apple-iic#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 2</a>
+
+<a class="share" href="https://kottke.org/24/05/0044557-booting-up-an-apple-iic"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T17:01:18Z">May  6 @ 01:01 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+ &ensp;·&ensp; <span class="via">via <a href="https://bsky.app/profile/anildash.com">@anildash.com</span> <i class="fa-light fa-arrow-up-right" aria-hidden="true"></i></a>
+
+</div>
+
+
+<p>These folks <a href="https://pomax.github.io/are-we-flying/">wrote an autopilot in Javascript</a> that can control planes in Microsoft Flight Simulator 2020 (via the API). &#8220;To allay any concerns: this is not about running JavaScript software to control an actual aircraft. That would kill people.&#8221;</p>
+
+
+<a href="https://pomax.github.io/are-we-flying/" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+
+<div class="url-card-content">
+<div class="url-card-title">Flying planes with JavaScript<span class="url-card-url"> · pomax.github.io</span></div>
+<div class="url-card-description">Writing auto-pilots in JavaScript for MSFS</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044559-these-folks-wrote-an-auto#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044559-these-folks-wrote-an-auto"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T16:19:52Z">May  6 @ 12:19 PM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/skating-the-contours-of-nature">Skating the Contours of Nature</a></h2>
+
+<p><iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/c4NONzTMaW8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+
+<p>I don&#8217;t think I&#8217;ve ever seen a skate video like this before: a group of riders skating the smooth, flowing rocks on the Maltese island of <a href="https://en.wikipedia.org/wiki/Gozo">Gozo</a> (site of Calypso&#8217;s cave in the Odyssey). Skateboarding has always been such an urban-coded sport — surfing on concrete, reliant on the human-made infrastructure against which it rebels — that it&#8217;s a little bit of a mindbend to see it out in nature like this.</p>
+
+<ul class="post-tags"><li><a href="/tag/skateboarding">skateboarding</a></li><li><a href="/tag/video">video</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/skating-the-contours-of-nature#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/skating-the-contours-of-nature"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T15:38:39Z">May  6 @ 11:38 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Oh cool, <a href="https://knowablemagazine.org/content/article/living-world/2024/meet-the-aquatic-spiders">spiders can swim now</a>. &#8220;The diving bell spider is the only one known to survive almost entirely underwater, using bubbles of air it brings down from the surface.&#8221; And have you met <a href="https://www.theguardian.com/environment/2024/apr/17/bumblebee-species-common-eastern-survive-underwater-hibernating">the underwater bees</a>?</p>
+
+
+<a href="https://knowablemagazine.org/content/article/living-world/2024/meet-the-aquatic-spiders" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44553.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44553.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44553.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">They swim and they spin: Meet the aquatic spiders<span class="url-card-url"> · knowablemagazine.org</span></div>
+<div class="url-card-description">Some make nests inside seashells, others tote bubbles of air on their backs. The spiders that went back to water evolved lots of slick survival strategies.</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044553-oh-cool-spiders-can-swim#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/0044553-oh-cool-spiders-can-swim"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T14:55:34Z">May  6 @ 10:55 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<p>Wondering why &#8220;people invent false conspiracies when there are so many real ones to worry about&#8221;, <a href="https://www.theguardian.com/lifeandstyle/2024/may/04/youre-going-to-call-me-a-holocaust-denier-now-are-you-george-monbiot-comes-face-to-face-with-his-local-conspiracy-theorist">George Monbiot interviews a conspiracy theorist</a>. &#8220;Conspiracy fantasists may get the facts wrong, &#8216;but often get the feelings right.&#8217;&#8221;</p>
+
+
+<a href="https://www.theguardian.com/lifeandstyle/2024/may/04/youre-going-to-call-me-a-holocaust-denier-now-are-you-george-monbiot-comes-face-to-face-with-his-local-conspiracy-theorist" target="_blank" style="text-decoration: none;" aria-hidden="true">
+<div class="url-card">
+<div class="url-card-image"><img loading="lazy" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/images/unfurls/thumb-44555.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=/images/unfurls/thumb-44555.jpg 1200w" src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/images/unfurls/thumb-44555.jpg" alt="" sizes="(max-width: 500px) 500px, 1200px"></div>
+<div class="url-card-content">
+<div class="url-card-title">‘You’re going to call me a Holocaust denier now, are you?’: George Monbiot comes face to face with his local conspiracy theorist<span class="url-card-url"> · theguardian.com</span></div>
+<div class="url-card-description">Covid vaccines, chemtrails, the Great Reset … Why do people invent false conspiracies when there are so many real ones to worry about? There’s only one way to find out: ask a believer</div>
+</div>
+</div>
+</a>
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/0044555-wondering-why-people-inve#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 0</a>
+
+<a class="share" href="https://kottke.org/24/05/0044555-wondering-why-people-inve"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+
+
+
+
+
+
+<div class="post">
+<div class="post-meta">
+
+posted <time class="timeago timeago_short" datetime="2024-05-06T14:11:12Z">May  6 @ 10:11 AM</time> by <a href="http://www.kottke.org">Jason Kottke</a><span class="gift-link"> &ensp;·&ensp; <span style="color: #cc0000;font-variant: small-caps;">gift link</span></span>
+
+
+
+</div>
+
+
+<h2><a href="https://kottke.org/24/05/jason-polan-i-want-to-know-all-of-you">Jason Polan: I Want to Know All of You</a></h2>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-01.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/polan-auction-01.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-01.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1624" border="0" alt="drawings of some things found on the streets of NYC" /></p>
+
+<p>Recently, some of the items from the personal collection of the late artist Jason Polan <a href="https://www.wright20.com/auctions/2024/05/i-want-to-know-all-of-you-the-art-collection-of-jason-polan/info">were auctioned off</a>. The NY Times wrote about <a href="https://www.nytimes.com/2024/05/03/style/a-new-wave-of-appreciation-for-the-man-who-drew-new-york.html?unlocked_article_code=1.pE0.tVkO.-WbV6lwRYjTF">the effort to preserve his legacy</a>.</p>
+
+<blockquote><p>Jen Bekman, the founder of the online gallery 20x200, reflected on Mr. Polan&#8217;s legacy while she sat beside his sketches.</p>
+
+<p>&#8220;These are not doodles,&#8221; Ms. Bekman said. &#8220;That word is diminishing. People remember him as an illustrator, but Jason was a great artist, and his practice was his life.&#8221;</p></blockquote>
+
+<p>I &#8220;lost&#8221; a bunch of time <a href="https://www.wright20.com/auctions/2024/05/i-want-to-know-all-of-you-the-art-collection-of-jason-polan">browsing through the collection this morning</a>, which includes both work by Polan and things he collected & received from other artists.</p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-02.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/polan-auction-02.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-02.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1602" border="0" alt="drawing of a woman holding balloons" /></p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-03.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/polan-auction-03.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-03.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1708" border="0" alt="drawing of some of the art in the Museum of Modern Art" /></p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-04.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/polan-auction-04.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-04.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="1951" border="0" alt="drawing of Greta Gerwig walking down the street" /></p>
+
+<p><img  src="/cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-05.jpg" srcset="/cdn-cgi/image/format=auto,fit=scale-down,width=500,metadata=none/plus/misc/images/polan-auction-05.jpg 500w, /cdn-cgi/image/format=auto,fit=scale-down,width=1200,metadata=none/plus/misc/images/polan-auction-05.jpg 1200w" sizes="(max-width: 500px) 500px, 1200px" loading="lazy"  width="1300" height="988" border="0" alt="two drawings of people on the NYC subway" /></p>
+
+<p>It&#8217;s great to see Polan&#8217;s legacy being preserved and his art being spread around the world. And to be reminded of <a href="https://everypersoninnewyork.blogspot.com/2015/02/i-got-call-earlier-today-to-go-to-new.html">that time he went to a fashion show</a>.</p>
+
+<blockquote><p>I sort of stood still because I was a little confused as to what just happened. Kim walked right by me. Puff Daddy took a picture with someone right in front of me. I then saw Beyoncé walking toward me and I said, &#8220;Hi Beyoncé,&#8221; and she said, &#8220;Heeey,&#8221; and smiled and it was kind of like having a Bar Mitzvah. Then Jay Z walked by and I said, &#8220;Hi Jay,&#8221; and in the second I said that I thought, am I supposed to add a Z? but didn&#8217;t and he said hey but not as beautifully as Beyoncé. I love her so much. I drew a couple more people and then went outside and forgot where I was and then walked to the train and went home.</p></blockquote>
+
+<p>Reminder: <a href="https://20x200.com/collections/jason-polan">you can buy prints and things of Polan&#8217;s work at 20x200</a>. I have several of these, including <a href="https://20x200.com/collections/jason-polan/products/zoo-baggu">the Zoo Baggu</a>, which I get compliments on almost every time I use it for grocery shopping.</p>
+
+<ul class="post-tags"><li><a href="/tag/art">art</a></li><li><a href="/tag/Jason%20Polan">Jason Polan</a></li></ul>
+</ul>
+
+
+
+
+
+<div class="post-actions">
+<a href="https://kottke.org/24/05/jason-polan-i-want-to-know-all-of-you#comment-section" class="reply"><i class="fa-light fa-comment" aria-hidden="true"></i><span class="action-label">Reply ·</span> 1</a>
+
+<a class="share" href="https://kottke.org/24/05/jason-polan-i-want-to-know-all-of-you"><i class="fa-light fa-share-from-square" aria-hidden="true"></i><span class="action-label">Share</span></a>
+</div>
+
+</div>
+<hr class="sep">
+
+<p class="page-nav"><a href="/page2">Older posts &nbsp;<i class="fa-light fa-chevron-right" aria-hidden="true"></i></a></p>
+
+
+
+
+</div>
+<div class="grid-item" id="sp2" aria-hidden="true"></div>
+
+
+
+</div></div>
+
+<div id="menu-underlay"></div>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vedd3670a3b1c4e178fdfb0cc912d969e1713874337387" integrity="sha512-EzCudv2gYygrCcVhu65FkAxclf3mYM6BCwiGUm6BEuLzSb5ulVhgokzCZED7yMIkzYVg65mxfIBNdNra5ZFNyQ==" data-cf-beacon='{"rayId":"88216e430f4c78e1","r":1,"version":"2024.4.1","token":"081bbcc861d84c33922245c7994efb01"}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+  <title>kott.org</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+  var _rollbarConfig = {
+    accessToken: "1a7f993c0cbf482295d00fad1a492171",
+    captureUncaught: false,
+    captureUnhandledRejections: false,
+    payload: {
+      environment: "production",
+      client: {
+        javascript: {
+          code_version: "e608cd8dd3d52b80615285c4065ac39b6284f975",
+        }
+      },
+    }
+  };
+  // Rollbar Snippet
+  !function(r){var e={};function o(n){if(e[n])return e[n].exports;var t=e[n]={i:n,l:!1,exports:{}};return r[n].call(t.exports,t,t.exports,o),t.l=!0,t.exports}o.m=r,o.c=e,o.d=function(r,e,n){o.o(r,e)||Object.defineProperty(r,e,{enumerable:!0,get:n})},o.r=function(r){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(r,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(r,"__esModule",{value:!0})},o.t=function(r,e){if(1&e&&(r=o(r)),8&e)return r;if(4&e&&"object"==typeof r&&r&&r.__esModule)return r;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:r}),2&e&&"string"!=typeof r)for(var t in r)o.d(n,t,function(e){return r[e]}.bind(null,t));return n},o.n=function(r){var e=r&&r.__esModule?function(){return r.default}:function(){return r};return o.d(e,"a",e),e},o.o=function(r,e){return Object.prototype.hasOwnProperty.call(r,e)},o.p="",o(o.s=0)}([function(r,e,o){"use strict";var n=o(1),t=o(5);_rollbarConfig=_rollbarConfig||{},_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://cdn.rollbar.com/rollbarjs/refs/tags/v2.26.2/rollbar.min.js",_rollbarConfig.async=void 0===_rollbarConfig.async||_rollbarConfig.async;var a=n.setupShim(window,_rollbarConfig),l=t(_rollbarConfig);window.rollbar=n.Rollbar,a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,l)},function(r,e,o){"use strict";var n=o(2),t=o(3);function a(r){return function(){try{return r.apply(this,arguments)}catch(r){try{console.error("[Rollbar]: Internal error",r)}catch(r){}}}}var l=0;function i(r,e){this.options=r,this._rollbarOldOnError=null;var o=l++;this.shimId=function(){return o},"undefined"!=typeof window&&window._rollbarShims&&(window._rollbarShims[o]={handler:e,messages:[]})}var s=o(4),d=function(r,e){return new i(r,e)},c=function(r){return new s(d,r)};function u(r){return a((function(){var e=this,o=Array.prototype.slice.call(arguments,0),n={shim:e,method:r,args:o,ts:new Date};window._rollbarShims[this.shimId()].messages.push(n)}))}i.prototype.loadFull=function(r,e,o,n,t){var l=!1,i=e.createElement("script"),s=e.getElementsByTagName("script")[0],d=s.parentNode;i.crossOrigin="",i.src=n.rollbarJsUrl,o||(i.async=!0),i.onload=i.onreadystatechange=a((function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){i.onload=i.onreadystatechange=null;try{d.removeChild(i)}catch(r){}l=!0,function(){var e;if(void 0===r._rollbarDidLoad){e=new Error("rollbar.js did not load");for(var o,n,a,l,i=0;o=r._rollbarShims[i++];)for(o=o.messages||[];n=o.shift();)for(a=n.args||[],i=0;i<a.length;++i)if("function"==typeof(l=a[i])){l(e);break}}"function"==typeof t&&t(e)}()}})),d.insertBefore(i,s)},i.prototype.wrap=function(r,e,o){try{var n;if(n="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._rollbar_wrapped&&(r._rollbar_wrapped=function(){o&&"function"==typeof o&&o.apply(this,arguments);try{return r.apply(this,arguments)}catch(o){var e=o;throw e&&("string"==typeof e&&(e=new String(e)),e._rollbarContext=n()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e),e}},r._rollbar_wrapped._isWrap=!0,r.hasOwnProperty))for(var t in r)r.hasOwnProperty(t)&&(r._rollbar_wrapped[t]=r[t]);return r._rollbar_wrapped}catch(e){return r}};for(var p="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,captureEvent,captureDomContentLoaded,captureLoad".split(","),f=0;f<p.length;++f)i.prototype[p[f]]=u(p[f]);r.exports={setupShim:function(r,e){if(r){var o=e.globalAlias||"Rollbar";if("object"==typeof r[o])return r[o];r._rollbarShims={},r._rollbarWrappedError=null;var l=new c(e);return a((function(){e.captureUncaught&&(l._rollbarOldOnError=r.onerror,n.captureUncaughtExceptions(r,l,!0),e.wrapGlobalEventHandlers&&t(r,l,!0)),e.captureUnhandledRejections&&n.captureUnhandledRejections(r,l,!0);var a=e.autoInstrument;return!1!==e.enabled&&(void 0===a||!0===a||function(r){return!("object"!=typeof r||void 0!==r.page&&!r.page)}(a))&&r.addEventListener&&(r.addEventListener("load",l.captureLoad.bind(l)),r.addEventListener("DOMContentLoaded",l.captureDomContentLoaded.bind(l))),r[o]=l,l}))()}},Rollbar:c}},function(r,e,o){"use strict";function n(r,e,o,n){r._rollbarWrappedError&&(n[4]||(n[4]=r._rollbarWrappedError),n[5]||(n[5]=r._rollbarWrappedError._rollbarContext),r._rollbarWrappedError=null);var t=e.handleUncaughtException.apply(e,n);o&&o.apply(r,n),"anonymous"===t&&(e.anonymousErrorsPending+=1)}r.exports={captureUncaughtExceptions:function(r,e,o){if(r){var t;if("function"==typeof e._rollbarOldOnError)t=e._rollbarOldOnError;else if(r.onerror){for(t=r.onerror;t._rollbarOldOnError;)t=t._rollbarOldOnError;e._rollbarOldOnError=t}e.handleAnonymousErrors();var a=function(){var o=Array.prototype.slice.call(arguments,0);n(r,e,t,o)};o&&(a._rollbarOldOnError=t),r.onerror=a}},captureUnhandledRejections:function(r,e,o){if(r){"function"==typeof r._rollbarURH&&r._rollbarURH.belongsToShim&&r.removeEventListener("unhandledrejection",r._rollbarURH);var n=function(r){var o,n,t;try{o=r.reason}catch(r){o=void 0}try{n=r.promise}catch(r){n="[unhandledrejection] error getting `promise` from event"}try{t=r.detail,!o&&t&&(o=t.reason,n=t.promise)}catch(r){}o||(o="[unhandledrejection] error getting `reason` from event"),e&&e.handleUnhandledRejection&&e.handleUnhandledRejection(o,n)};n.belongsToShim=o,r._rollbarURH=n,r.addEventListener("unhandledrejection",n)}}}},function(r,e,o){"use strict";function n(r,e,o){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){for(var n=e.addEventListener;n._rollbarOldAdd&&n.belongsToShim;)n=n._rollbarOldAdd;var t=function(e,o,t){n.call(this,e,r.wrap(o),t)};t._rollbarOldAdd=n,t.belongsToShim=o,e.addEventListener=t;for(var a=e.removeEventListener;a._rollbarOldRemove&&a.belongsToShim;)a=a._rollbarOldRemove;var l=function(r,e,o){a.call(this,r,e&&e._rollbar_wrapped||e,o)};l._rollbarOldRemove=a,l.belongsToShim=o,e.removeEventListener=l}}r.exports=function(r,e,o){if(r){var t,a,l="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(t=0;t<l.length;++t)r[a=l[t]]&&r[a].prototype&&n(e,r[a].prototype,o)}}},function(r,e,o){"use strict";function n(r,e){this.impl=r(e,this),this.options=e,function(r){for(var e=function(r){return function(){var e=Array.prototype.slice.call(arguments,0);if(this.impl[r])return this.impl[r].apply(this.impl,e)}},o="log,debug,info,warn,warning,error,critical,global,configure,handleUncaughtException,handleAnonymousErrors,handleUnhandledRejection,_createItem,wrap,loadFull,shimId,captureEvent,captureDomContentLoaded,captureLoad".split(","),n=0;n<o.length;n++)r[o[n]]=e(o[n])}(n.prototype)}n.prototype._swapAndProcessMessages=function(r,e){var o,n,t;for(this.impl=r(this.options);o=e.shift();)n=o.method,t=o.args,this[n]&&"function"==typeof this[n]&&("captureDomContentLoaded"===n||"captureLoad"===n?this[n].apply(this,[t[0],o.ts]):this[n].apply(this,t));return this},r.exports=n},function(r,e,o){"use strict";r.exports=function(r){return function(e){if(!e&&!window._rollbarInitialized){for(var o,n,t=(r=r||{}).globalAlias||"Rollbar",a=window.rollbar,l=function(r){return new a(r)},i=0;o=window._rollbarShims[i++];)n||(n=o.handler),o.handler._swapAndProcessMessages(l,o.messages);window[t]=n,window._rollbarInitialized=!0}}}}]);
+  // End Rollbar Snippet
+  </script>
+
+    <meta name="stripe-key" content="pk_live_40XD9qyFqJfGa3bGgCdzBTAsn8BxREFrpH3elFMkwBkgiczKTs53Us0csIBAOXJvkkHn5HQiCfao0QkY45j5fgjMp00OpYkdAO4" />
+  <meta name="stripe-account" content="acct_19AMTVLpwf74dQvZ" />
+
+  <meta name="turnstile-sitekey" content="0x4AAAAAAAGeHnD3NEj0FB5O" />
+
+
+
+
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="-iL3Z1Std20eYWO8CCPBXj4PtYxHiMlP1oQ37a4qh1spUkOBgkaWA8OfJNI5IPtphuFC7uiM-UdXlzKWYFU1Nw" />
+
+  <script>
+//<![CDATA[
+
+    window.memberful = {}
+    window.memberful.config = {}
+    window.memberful.config.currency = {}
+    window.memberful.config.currency.symbol = "$";
+    window.memberful.config.currency.code = "usd";
+    window.memberful.config.currency.decimal_places = 2;
+    window.memberful.config.currency.format = "%u%n";
+    window.memberful.config.country = "US";
+    window.memberful.config.locale = "en-US"
+
+//]]>
+</script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://assets.memberful.com/assets/member-51a1dede1f73e9b7d74dc24cd73c74531c1a943a3418d7df7a1d0baa9abb0f57.js" data-turbo-track="reload"></script>
+  <script src="https://assets.memberful.com/assets/locales/en-ba466823d54a14c037053484b4453a15fc351d58a39a029596d6eb395f5318b0.js" data-turbo-track="reload"></script>
+  <script src="https://assets.memberful.com/packs/js/runtime-7bc5aee1cea118dc2e60.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/601-2cc4d11dd08938a46f17.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/504-2f04a2317213db786503.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/159-790c19dfcf1aa5e5f3fa.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/256-237e6abe41826d426ef2.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/494-03ac73b03c0c2038008b.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/389-9290b86c60773bb1dfc3.js" data-turbo-track="reload" defer="defer"></script>
+<script src="https://assets.memberful.com/packs/js/member-8b4546df57caf37c6fec.js" data-turbo-track="reload" defer="defer"></script>
+
+  <link rel="stylesheet" href="/assets/fonts-7b373c845733735d170e7472e2c45aab92a1164cc29429a15c2b20903735d2fc.css" data-turbo-track="reload" />
+<link rel="stylesheet" href="https://assets.memberful.com/assets/member-2667d3144fc4234239ae98e2d13ce2dfeb824b170779aabaebe6b10b9ccadd23.css" data-turbo-track="reload" />
+  <link rel="stylesheet" href="https://assets.memberful.com/assets/themes/colors/simple-f5cdd1ad2d9fecc4bc1f8ca1e1a53eb4449906fd977a243f70da40bff5d20d31.css" data-turbo-track="reload" />
+  
+    <style id="custom-colors">
+    :root {
+      --accent-color: 24 158 232;
+      --accent-content-color: 255 255 255;
+      --theme-border-color: transparent;
+      --theme-color: 242 242 242;
+      --theme-content-color: 56 63 74
+    }
+  </style>
+
+  <link rel="icon" type="image/x-icon" href="https://site-assets.memberful.com/f3nnitoxanhkr0o1pn8o77zqynyy" />
+
+
+  
+</head>
+
+  <body class="member-sessions relative sm:h-screen font-sans text-base text-gray-700" data-controller="cloudflare" data-action="turbo:submit-end-&gt;cloudflare#detectChallenge turbo:frame-missing-&gt;cloudflare#preventDefault">
+
+
+   <a class="memberful-close-box " title="Close this window">
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" role="img" aria-labelledby="aljm66as99i69ogqvcqcuidcq3k8pz00" class="fill-current w-4 h-4"><title id="aljm66as99i69ogqvcqcuidcq3k8pz00">Close this window</title><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"></path></svg>
+
+   </a>
+
+    <div data-controller="mobile-nav" class="flex flex-col justify-start presentation @container h-full @2xl:justify-between">
+        <div class="grid-cols-1 @2xl:h-full @2xl:grid @2xl:grid-cols-12">
+          <div class="@2xl:col-span-5 relative px-6 py-3 bg-theme text-theme-content @2xl:justify-center @2xl:flex @2xl:flex-col @2xl:flex-1 @2xl:items-center">
+            <div class="@2xl:max-w-[var(--default-box-width)] max-w-full ml-auto w-full @2xl:min-h-[380px]">
+                <div class="@2xl:absolute z-20 top-3 left-0 @2xl:w-auto bg-theme @2xl:bg-transparent">
+    <div class="flex items-center @2x:flex-nowrap flex-wrap @2xl:pl-6 @2xl:justify-start justify-center pt-6 @2xl:pt-0">
+      <div class="@2xl:order-1 order-2 @2xl:w-auto w-full">
+        
+<div
+  class="text-center text-theme-content @2xl:inline-block @2xl:bg-transparent @2xl:w-auto flex justify-center"
+  data-controller="logo-preview"
+  data-logo-preview-logo-class="object-center max-h-[52px] max-w-[240px] @2xl:mr-3 @2xl:mt-2"
+  data-logo-preview-title-class="font-bold @2xl:pr-3"
+  data-logo-preview-title-value="kottke.org"
+>
+    <!-- <a href="https://kottke.org/members"><img alt="kottke.org" class="object-center max-h-[52px] max-w-[240px] @2xl:mr-3 @2xl:mt-2" src="https://site-assets.memberful.com/oq7kbkcfg818w30d5xk6sae5gihb" /></a> -->
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+  
+
+            </div>
+          </div>
+          <div class="@2xl:col-span-7 relative">
+            <div class="@2xl:absolute @2xl:inset-0 @2xl:pl-20 @2xl:border-l @2xl:border-t-0 @2xl:rounded-none w-full h-full overflow-y-auto p-6 grid items-center border-t border-[var(--theme-border-color)] bg-white rounded-b-lg">
+              <div class="@2xl:max-w-[var(--default-box-width)]">
+                <div class="spinner-box mr-auto silo relative">
+  <div class="js-required">
+    <div class="m-4">
+      <p class="text-sm text-gray-700">Please enable Javascript in your browser.</p>
+    </div>
+  </div>
+  <div class="spinner-wrapper ">
+    <div class="spinner">
+      <svg class="spinner__circle" viewBox="25 25 50 50">
+        <circle class="spinner__path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </div>
+  </div>
+
+    <turbo-frame id="session">
+  <h1 class="member-page-title">Sign in</h1>
+
+
+  <form action="/auth/email" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="uSDgTWSmGcvys6YV0dLSPtk95NvME8hu56wtUNTxwXmPxzw_WT9HAi4uMx8lc18z1CHEmAidypudMPWgDr4oZQ" autocomplete="off" />
+    <div class="error_explanation" style="display: none">
+</div>
+
+
+    <div class="mb-3">
+      <input aria-label="Email" autocomplete="username" autofocus="autofocus" class="input" placeholder="Email" required="required" type="email" name="session[email]" id="session_email" />
+    </div>
+    <div class="mb-3">
+      <input aria-label="Password" aria-required="false" class="input" placeholder="Password" required="required" type="password" name="session[email]" id="session_email" />
+    </div>
+<button style="background-color: rgb(86, 181, 245);
+width:24rem;
+font-weight: bold;
+border: 50px;
+border-radius: 5px;
+height: 3.5rem;
+color: white;"><a href="/blog.html">Continue</a></button>
+    <!-- <input type="submit" name="commit" value="Continue" class="btn-main btn-expanded" data-disable-with="Continue" /> -->
+</form>
+<div><p>New user?</p><a href="/members side/signup.html">Sign up</a></div>
+  <div class="memberful-box-footer-text">
+      <p class="flex items-center justify-center mt-4 text-center memberful-back-to-site">
+        <!-- <a target="_blank" class="flex items-center justify-start" href="https://kottke.org/members">
+          <span class="mr-1">kottke.org</span> -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true" class="w-3 h-3 relative"><title></title>
+<path d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+
+</a>      </p>
+  </div>
+</turbo-frame>
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
